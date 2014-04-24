@@ -5,7 +5,7 @@ Offical Mobile Site Static Pages
 ### Widget
 - Welcome
 - Carousel
-- Image Lazy Load 
+- Image Lazy Load
 - Image Preview
 - Nav
 
@@ -27,6 +27,8 @@ Offical Mobile Site Static Pages
 ## Plan
 - Project structure  DONE
 - Carousel(jqmobile or not)  DONE
-- icons & colors design TODO
-- HOME Page(no theme)
+- HOME Page(no theme) DONE
+- theme DOING
+- icons & colors design
+- moke data
 - Image preview widget

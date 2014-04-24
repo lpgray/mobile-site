@@ -4,10 +4,9 @@
 */
 
 .owl-theme .owl-controls{
-	margin-top: 0;
+	margin-top: -25px;
+	height: 25px;
 	text-align: center;
-	height: 0;
-	overflow: hidden;
 }
 
 /* Styling Next and Prev buttons */
@@ -52,13 +51,13 @@
 	-webkit-border-radius: 20px;
 	-moz-border-radius: 20px;
 	border-radius: 20px;
-	background: #869791;
+	background: #fff;
 }
 
 .owl-theme .owl-controls .owl-page.active span,
 .owl-theme .owl-controls.clickable .owl-page:hover span{
 	filter: Alpha(Opacity=100);/*IE7 fix*/
-	opacity: 1;
+	opacity: .99;
 }
 
 /* If PaginationNumbers is true */
