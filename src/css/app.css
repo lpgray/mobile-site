@@ -1,0 +1,58 @@
+/* common */
+.tc{text-align: center;}
+.clearfix:before,.clearfix:after{content:"";display:table;}
+.clearfix:after,.clear{clear:both;}
+.clearfix{zoom:1;}
+
+/* ui-listview */
+.ui-content .ui-listview-inset, .ui-panel-inner>.ui-listview-inset{margin: 0}
+.ui-listview .ui-btn{padding: 0;}
+.ui-listview > li p{text-overflow: initial; word-break: break-word; white-space: initial; max-height: 2.5em;}
+.ui-listview > li .img-wrap{float: left; height: 3.3em; width: 4.4em; background: transparent; position: relative; overflow: hidden; margin: .55em .55em 0 .55em;}
+.ui-listview > li .img-wrap img{width: 100%;}
+.ui-listview .ui-btn{padding-right: 2em;}
+
+/* banner */
+.ms-banner img{display: block; width: 100%; height: auto}
+
+/* top-news */
+a.ms-top-news{margin-bottom: .5em; border: 1px solid #000; padding: .5em; display: block; text-decoration: none;}
+.ms-top-news img{width: 100px; height: auto; float: left;}
+.ms-news-ctn{margin-left: 108px;}
+.ms-top-news p, .ms-top-news h4{margin: 0}
+.ms-top-news p{font-size: .8em; margin-top: 5px;text-shadow: none; font-weight: normal;}
+
+/* ms-grid */
+.ms-grid a{text-align: center;text-shadow: none; text-decoration: none; font-weight: normal;}
+.ms-grid .ui-bar{background-color: #fefefe;height: 40px; font-size: .8em; height: 28px; padding-top: 70px;}
+.ms-grid{border: 1px solid #000; border-right: 0; border-bottom: 0}
+.ms-grid .ui-bar-a{border: 1px solid #000; border-left: 0; border-top: 0;}
+
+/* icons */
+.ui-icon-carat-r{position: relative; padding-right: 1em;}
+.ui-icon-carat-r:after{background: none; content: ">"; position: absolute; right: 0; top: 50%; margin-top: -14px; font-size: 24px; font-weight: bold; color: #ccc;}
+.ui-btn-icon-left:after,
+.ui-btn-icon-right:after, 
+.ui-btn-icon-top:after, 
+.ui-btn-icon-bottom:after,
+.ui-btn-icon-notext:after
+{background-color: transparent;}
+
+/* ms-article */
+.ms-article-content h2{margin: .5em}
+
+/* Theme */
+.ui-page{background-color: #eee}
+.ui-content{padding: .5em;}
+.owl-carousel .item img{display: block; width: 100%; height: auto}
+.ms-theme-size-normal{font-size: .8em}
+.ms-theme-title{color: #333;}
+.ms-theme-summary{color: #999;}
+.ui-page-theme-a .ms-grid a:visited,
+html .ui-bar-a .ms-grid a:visited, 
+html .ui-body-a .ms-grid a:visited,
+html body .ui-group-theme-a .ms-grid a:visited,
+a.ms-theme-words, .ms-theme-words,
+a.ms-theme-words:hover{color: #666;}
+a.ms-top-news, .ms-grid .ui-bar, .ms-grid{background-color: #fefefe; border-color: #e2e2e2;}
+a.ms-top-news:active, .ms-grid .ui-bar:active{background-color: #fcfcfc;}

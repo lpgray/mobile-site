@@ -1,15 +1,15 @@
 Offical Mobile Site Static Pages
 ==========
-# Tech
+## Tech
 
-## Widget
+### Widget
 - Welcome
 - Carousel
 - Image Lazy Load 
 - Image Preview
 - Nav
 
-## Pages
+### Pages
 - Home
 - About
 - List
@@ -17,9 +17,16 @@ Offical Mobile Site Static Pages
 - Feed
 - Form
 
-# Features
-- Theme
+## Features
+### Theme Customize
 
-# Framework
+### Framework
 - jquery mobile
 - Sencha Touch
+
+## Plan
+- Project structure  DONE
+- Carousel(jqmobile or not)  DONE
+- icons & colors design TODO
+- HOME Page(no theme)
+- Image preview widget
