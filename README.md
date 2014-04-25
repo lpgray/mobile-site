@@ -28,7 +28,9 @@ Offical Mobile Site Static Pages
 - Project structure  DONE
 - Carousel(jqmobile or not)  DONE
 - HOME Page(no theme) DONE
-- theme DOING
-- icons & colors design
+- theme restructure
+	- put jqmobile and ms together
 - moke data
-- Image preview widget
+- widgets dev
+	- image preview
+- icons & colors design

@@ -4,6 +4,6 @@ $(document).ready(function(){
 		slideSpeed : 300,
 		pageinationSpeed : 3000,
 		singleItem : true,
-		autoPlay : false
+		autoPlay : true
 	});
 });
