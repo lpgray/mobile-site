@@ -1,30 +1,14 @@
 Offical Mobile Site Static Pages
 ==========
-## Tech
 
 ### Widget
-- Welcome
-- Carousel
+- Welcome DONE
+- Carousel DONE
 - Image Lazy Load
-- Image Preview
+- Image Preview(panel)
 - Nav
 
-### Pages
-- Home
-- About
-- List
-- Article Detail
-- Feed
-- Form
-
-## Features
-### Theme Customize
-
-### Framework
-- jquery mobile
-- Sencha Touch
-
-## Plan
+### Plan
 - Project structure  DONE
 - Carousel(jqmobile or not)  DONE
 - HOME Page(no theme) DONE
@@ -38,9 +22,8 @@ Offical Mobile Site Static Pages
 	- list DONE
 	- welcome to use DONE
 	- gallery 
-- widgets dev
+- widgets
 	- image preview
 - icons & colors design
 	- win8 style
-	- normal
 - moke data and mvc

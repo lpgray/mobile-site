@@ -305,8 +305,8 @@ html body .ui-group-theme-a .ui-bar-inherit {
 .ui-overlay-a,
 .ui-page-theme-a,
 .ui-page-theme-a .ui-panel-wrapper {
-	background-color: 			#f9f9f9 /*{a-page-background-color}*/;
-	border-color:	 		#bbb /*{a-page-border}*/;
+	background-color: 			#EEE /*{a-page-background-color}*/;
+	border-color:	 		#ddd /*{a-page-border}*/;
 	color: 					#333 /*{a-page-color}*/;
 	text-shadow: none;
 }
@@ -317,7 +317,7 @@ html .ui-bar-a .ui-body-inherit,
 html .ui-body-a .ui-body-inherit,
 html body .ui-group-theme-a .ui-body-inherit,
 html .ui-panel-page-container-a {
-	background-color: 			#fff /*{a-body-background-color}*/;
+	background-color: 			#EEE /*{a-body-background-color}*/;
 	border-color:	 		#ddd /*{a-body-border}*/;
 	color: 					#333 /*{a-body-color}*/;
 	text-shadow: 0 /*{a-body-shadow-x}*/ 1px /*{a-body-shadow-y}*/ 0 /*{a-body-shadow-radius}*/ 	#f3f3f3 /*{a-body-shadow-color}*/;
@@ -655,12 +655,14 @@ a.ms-theme-words, .ms-theme-words{color: #666;}
 a.ms-top-news, .ms-grid .ui-bar, .ms-grid{background-color: #fefefe; border-color: #e2e2e2;}
 a.ms-top-news:active, .ms-grid .ui-bar:active{background-color:#DFDFDF; border-color:#D3D0D0;}
 
-/* welcome-carousel */
+.ms-padding-5{padding: 0 .5em;}
+
+/* ms-welcome-carousel */
 #J_pagewelcome{background: #ddd;}
 .welcome-carousel .item{background-color: #3fbf79; color: #fff;}
 .welcome-carousel .owl-controls{margin-top: -100px;}
 
-/* article */
+/* ms-article */
 .ms-theme-title{color: #333;}
 .ms-theme-summary{color: #AAA;}
 .ms-theme-article{color: #666;}
