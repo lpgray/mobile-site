@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Home Page | Mobile Site</title>
+	<title>Mobile Site</title>
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
 	<link rel="stylesheet" href="assets/jquery.mobile-1.4.2/jquery.mobile-1.4.2.min.css">
 	<link rel="stylesheet" href="assets/owl-carousel/owl.carousel.css">
@@ -14,45 +14,84 @@
 <body>
 	
 	<div id="J_pagehome" data-role="page">
-		<div data-role="header">
-			<h1>LOGO</h1>
-		</div>
-		<div id="J_owl" class="owl-carousel owl-theme">
-			<div class="item"><a href="#J_pagearticle"><img src="assets/imgs/fullimage1.jpg" alt="1"></a></div>
-			<div class="item"><img src="assets/imgs/fullimage2.jpg" alt="2"></div>
-			<div class="item"><img src="assets/imgs/fullimage3.jpg" alt="3"></div>
-			<div class="item"><img src="assets/imgs/fullimage4.jpg" alt="4"></div>
-			<div class="item"><img src="assets/imgs/fullimage5.jpg" alt="5"></div>
-		</div><!-- ./owl-carousel -->
-		<div class="ui-content" role="main">
-			<a href="#J_pagearticle" class="ms-top-news clearfix">
-				<img src="assets/imgs/news.png" alt="app">
-				<div class="ms-news-ctn ui-icon-carat-r">
-					<h4 class="ms-theme-title">最美应用设计发布</h4>
-					<p class="ms-theme-words">上刊登名典咖啡那件事到年底快到年底的伤口多上刊登名典那件事到年底。</p>
+		<div data-role="tabs">
+			
+			<div id="J_home">
+				<div data-role="header">
+					<h1>Mobile Site</h1>
 				</div>
-			</a><!-- /.top-news -->
-			<div class="ui-grid-b ms-grid">
-				<div class="ui-block-a"><a href="#J_pagelist" class="ui-bar ui-bar-a ms-icon ms-icon-paper"><i class="fa fa-file-text"></i>企业资讯</a></div>
-				<div class="ui-block-b"><a href="#J_pagelist" class="ui-bar ui-bar-a ms-icon ms-icon-chart"><i class="fa fa-bar-chart-o"></i>信息统计查询</a></div>
-				<div class="ui-block-c"><a href="#J_pagelist" class="ui-bar ui-bar-a ms-icon ms-icon-tools"><i class="fa fa-building-o"></i>房产管理</a></div>
-				<div class="ui-block-a"><a href="#J_pagelist" class="ui-bar ui-bar-a ms-icon ms-icon-sun"><i class="fa fa-bullhorn"></i>企业活动</a></div>
-				<div class="ui-block-b"><a href="#J_pagelist" class="ui-bar ui-bar-a ms-icon ms-icon-magic"><i class="fa fa-gift"></i>物品交易</a></div>
-				<div class="ui-block-c"><a href="#J_pagelist" class="ui-bar ui-bar-a ms-icon ms-icon-user"><i class="fa fa-user"></i>用户中心</a></div>
-			</div><!-- ./ui-grid -->
-		</div><!-- ./content -->
-		<div data-role="footer" data-position="fixed">
-			<div data-role="navbar">
-				<ul>
-					<li><a href="#" class="ui-icon-home ui-btn-icon-top ui-btn-active">首页</a></li>
-					<li><a href="#" class="ui-icon-search ui-btn-icon-top">搜索</a></li>
-					<li><a href="#" class="ui-icon-info ui-btn-icon-top">关于我们</a></li>
-					<li><a href="#" class="ui-icon-comment ui-btn-icon-top">联系我们</a></li>
-					<li><a href="#" class="ui-icon-phone ui-btn-icon-top">呼叫</a></li>
-				</ul>
-			</div>
-		</div>
-	</div><!-- ./Home Page -->
+				<div id="J_owl" class="owl-carousel owl-theme">
+					<div class="item"><a href="#J_pagearticle"><img src="assets/imgs/fullimage1.jpg" alt="1"></a></div>
+					<div class="item"><img src="assets/imgs/fullimage2.jpg" alt="2"></div>
+					<div class="item"><img src="assets/imgs/fullimage3.jpg" alt="3"></div>
+					<div class="item"><img src="assets/imgs/fullimage4.jpg" alt="4"></div>
+					<div class="item"><img src="assets/imgs/fullimage5.jpg" alt="5"></div>
+				</div><!-- ./owl-carousel -->
+				<div class="ui-content">
+					<a href="#J_pagearticle" class="ms-top-news clearfix">
+						<img src="assets/imgs/news.png" alt="app">
+						<div class="ms-news-ctn ui-icon-carat-r">
+							<h4 class="ms-theme-title">最美应用设计发布</h4>
+							<p class="ms-theme-words">上刊登名典咖啡那件事到年底快到年底的伤口多上刊登名典那件事到年底。</p>
+						</div>
+					</a><!-- /.top-news -->
+					<div class="ui-grid-b ms-grid">
+						<div class="ui-block-a"><a href="#J_pagelist" class="ui-bar ui-bar-a ms-icon ms-icon-paper"><i class="fa fa-file-text"></i>文章列表</a></div>
+						<div class="ui-block-b"><a href="#" class="ui-bar ui-bar-a ms-icon ms-icon-chart"><i class="fa fa-bar-chart-o"></i>报表资源</a></div>
+						<div class="ui-block-c"><a href="#J_pagearticle" class="ui-bar ui-bar-a ms-icon ms-icon-tools"><i class="fa fa-building-o"></i>文章详情</a></div>
+						<div class="ui-block-a"><a href="#" class="ui-bar ui-bar-a ms-icon ms-icon-sun"><i class="fa fa-bullhorn"></i>企业活动</a></div>
+						<div class="ui-block-b"><a href="#" class="ui-bar ui-bar-a ms-icon ms-icon-magic"><i class="fa fa-gift"></i>物品交易</a></div>
+						<div class="ui-block-c"><a href="#J_pagefeed" class="ui-bar ui-bar-a ms-icon ms-icon-user"><i class="fa fa-user"></i>我的资料</a></div>
+					</div><!-- ./ui-grid -->
+				</div><!-- ./content -->
+			</div><!-- ./tab-home -->
+			
+			<div id="J_search">
+				<div data-role="header">
+					<h1>搜索</h1>
+				</div>
+				<div class="ui-content">
+				</div><!-- ./content -->
+			</div><!-- ./search -->
+			
+			<div id="J_about">
+				<div data-role="header">
+					<h1>关于我们</h1>
+				</div>
+				<div class="ms-banner">
+					<img src="assets/imgs/about.jpg" alt="关于我们">
+				</div>
+				<div class="ui-content ms-article">
+					<h3 class="ms-theme-title">公司前身</h3>
+					<p class="ms-theme-article ms-theme-size-normal">新华网是党中央直接部署，国家通讯社新华社主办的中央重点新闻网站，以“传播中国、报道世界”为职责，以“权威声音、亲切表达”为理念，通过中（简、繁体）、英、法、西、俄、阿、日、藏、维等多种语言，24小时不间断发布全球新闻，是名副其实的“网上新闻信息总汇”。
+					依托新华社31个国内分社、180余个境外分支机构以及自有采编队伍，新华网形成了全球化新闻信息采集网络，是中国网络媒体中传播力强、覆盖面广、资讯采集手段全、传播形态多样化的全媒体信息采编发平台。</p>
+					
+					<h3 class="ms-theme-title">联系方式</h3>
+					<div id="J_mapctn" style="height: 10em; background-color: #ccc">
+						
+					</div>
+					<p class="ms-theme-article ms-theme-size-normal">
+						<span class="ms-theme-color-red">联系电话:</span>18260008278
+					</p>
+					<p class="ms-theme-article ms-theme-size-normal">
+						<span class="ms-theme-color-red">通讯地址:</span>南京市玄武区长江后街6号东大科技园6号楼
+					</p>
+				</div><!-- ./content -->
+			</div><!-- ./About -->
+
+			<div data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#J_home" class="ui-icon-home ui-btn-icon-top ui-btn-active">首页</a></li>
+						<li><a href="#J_search" class="ui-icon-search ui-btn-icon-top">搜索</a></li>
+						<li><a href="#J_about" class="ui-icon-info ui-btn-icon-top">关于我们</a></li>
+						<li><a href="#" class="ui-icon-phone ui-btn-icon-top">呼叫</a></li>
+					</ul>
+				</div>
+			</div><!-- ./footer -->
+
+		</div><!-- ./tabs -->
+	</div><!-- ./Inde Page -->
 
 	<div id="J_pagelist" data-role="page">
 		<div data-role="header">
@@ -145,52 +184,67 @@
 			<h1>文章页面</h1>
 			<a data-rel="back" data-icon="back" data-iconpos="notext"></a>
 		</div>
-		<div role="main" class="ui-content ms-article-content">
-			<div class="ms-banner">
-				<img src="assets/imgs/news.png" alt="">
-			</div>
+		<div role="main" class="ui-content ms-article">
 			<h2 class="tc ms-theme-title">最美应用发布</h2>
 			<p class="tc ms-theme-summary ms-theme-size-normal">
 				发布者：最美应用&nbsp;&nbsp;时间：2014-04-24
 			</p>
-			<div class="ms-article-body ms-theme-words ms-theme-size-normal">
+			<p class="ms-banner">
+				<img src="assets/imgs/news.png" alt="">
+			</p>
+			<div class="ms-theme-article ms-theme-size-normal">
 				<p>
 					在标准的头部栏的设置下，标题文字两边各有一个可放置按钮的位置。每一个按钮通常都是都是 a 元素，但是任何有效的按钮标记的元素都可以。为了节省空间，工具栏里的按钮都是内联按钮，所以按钮的宽度只容纳icon和里面的文字。
 				</p>
 				<p>
-	头部的按钮是头部栏容器的直接子节点，默认情况下，JQuery Mobile 会自动设置第一个链接在标题的左边，第二个链接在右边。在下面这个例子中，“取消”按钮会出现在左边，“保存”按钮会出现在右边位置。
+				头部的按钮是头部栏容器的直接子节点，默认情况下，JQuery Mobile 会自动设置第一个链接在标题的左边，第二个链接在右边。在下面这个例子中，“取消”按钮会出现在左边，“保存”按钮会出现在右边位置。
 				</p>
 				<p>
 					在标准的头部栏的设置下，标题文字两边各有一个可放置按钮的位置。每一个按钮通常都是都是 a 元素，但是任何有效的按钮标记的元素都可以。为了节省空间，工具栏里的按钮都是内联按钮，所以按钮的宽度只容纳icon和里面的文字。
 				</p>
 				<p>
-	头部的按钮是头部栏容器的直接子节点，默认情况下，JQuery Mobile 会自动设置第一个链接在标题的左边，第二个链接在右边。在下面这个例子中，“取消”按钮会出现在左边，“保存”按钮会出现在右边位置。
+				头部的按钮是头部栏容器的直接子节点，默认情况下，JQuery Mobile 会自动设置第一个链接在标题的左边，第二个链接在右边。在下面这个例子中，“取消”按钮会出现在左边，“保存”按钮会出现在右边位置。
 				</p>
 				<p>
 					在标准的头部栏的设置下，标题文字两边各有一个可放置按钮的位置。每一个按钮通常都是都是 a 元素，但是任何有效的按钮标记的元素都可以。为了节省空间，工具栏里的按钮都是内联按钮，所以按钮的宽度只容纳icon和里面的文字。
 				</p>
 				<p>
-	头部的按钮是头部栏容器的直接子节点，默认情况下，JQuery Mobile 会自动设置第一个链接在标题的左边，第二个链接在右边。在下面这个例子中，“取消”按钮会出现在左边，“保存”按钮会出现在右边位置。
+				头部的按钮是头部栏容器的直接子节点，默认情况下，JQuery Mobile 会自动设置第一个链接在标题的左边，第二个链接在右边。在下面这个例子中，“取消”按钮会出现在左边，“保存”按钮会出现在右边位置。
 				</p>
 			</div>
 		</div>
-	</div><!-- ./About Page -->
-
-	<div id="J_pageabout" data-role="page">
-		<div data-role="header">
-			<h1>关于我们</h1>
-		</div>
-		<div class="ui-content" role="main">
-			<a href="#J_pagehome" class="ui-btn ui-shadow ui-corner-all">返回首页</a>
-		</div><!-- ./content -->
-		<div data-role="footer">
-			<h4>页脚</h4>
-		</div>
-	</div><!-- ./About Page -->
+	</div><!-- ./Article Page -->
 	
+	<div id="J_pagefeed" data-role="page">
+		<div data-role="header">
+			<h1>我的资料</h1>
+			<a data-rel="back" data-icon="back" data-iconpos="notext"></a>
+		</div>
+		<div class="ui-content">
+			<label for="iptName">用户名</label>
+			<input id="iptName" type="text" placeholder="输入你的姓名" data-clear-btn="true">
+			<label for="iptEmail">邮箱</label>
+			<input id="iptEmail" type="email" placeholder="输入你的邮箱" data-clear-btn="true">
+			<label for="iptText">个人简介</label>
+			<textarea id="iptText" placeholder="在这里写你的资料"></textarea>
+			<p class="ms-theme-summary ms-theme-size-normal">
+				<span class="ms-theme-color-red">温馨提示:</span>请输入比较详细的个人资料，以便我们的工作人员到时跟您联系。
+			</p>
+			<div class="ui-grid-a">
+				<div class="ui-block-a">
+					<a href="###" class="ui-btn ui-corner-all ui-shadow">确认修改</a>
+				</div>
+				<div class="ui-block-b">
+					<a data-rel="back" class="ui-btn ui-corner-all ui-btn-b ui-shadow">取消</a>
+				</div>
+			</div>
+		</div>
+	</div><!-- ./Feed Page -->
+
 	<script src="assets/jquery-1.11.0.min.js"></script>
 	<script src="assets/jquery.mobile-1.4.2/jquery.mobile-1.4.2.min.js"></script>
 	<script src="assets/owl-carousel/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?type=quick&ak=0RoPs2PERfeEIR4pS0zKbRo4&v=1.0"></script>
 	<script src="js/app.js"></script>
 </body>
 </html>
