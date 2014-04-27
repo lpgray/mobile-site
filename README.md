@@ -10,8 +10,7 @@ Offical Mobile Site Static Pages
 
 ### Plan
 - Project structure  DONE
-- Carousel(jqmobile or not)  DONE
-- HOME Page(no theme) DONE
+- Carousel  DONE
 - theme restructure
 	- put jqmobile and ms together DONE
 - Page
