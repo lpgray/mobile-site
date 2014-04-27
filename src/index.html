@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Mobile Site</title>
+	<title>企业标准化APP</title>
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
 	<link rel="stylesheet" href="assets/jquery.mobile-1.4.2/jquery.mobile-1.4.2.min.css">
 	<link rel="stylesheet" href="assets/owl-carousel/owl.carousel.css">
@@ -42,7 +42,7 @@
 		    </div>
 		</div><!-- /panel -->
 		<div data-role="tabs">
-			<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+			<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-corners="false">
 				<div data-role="navbar">
 					<ul>
 						<li><a href="#J_home" class="ui-nodisc-icon ui-icon-home ui-btn-icon-top ui-btn-active">首页</a></li>
@@ -55,39 +55,39 @@
 			
 			<div id="J_home">
 				<div data-role="header">
-					<h1>企业官网移动版</h1>
+					<h1>企业标准化APP</h1>
 					<a href="#J_searchpanel" data-icon="search" data-iconpos="notext" class="ui-nodisc-icon ui-btn-right">Search</a>
 				</div>
+				<div id="J_owl" class="owl-carousel owl-theme">
+					<div class="item"><a href="#"><img src="assets/imgs/fullimage5.jpg" alt="1"></a></div>
+					<div class="item"><img src="assets/imgs/fullimage2.jpg" alt="2"></div>
+					<div class="item"><img src="assets/imgs/fullimage3.jpg" alt="3"></div>
+					<div class="item"><img src="assets/imgs/fullimage4.jpg" alt="4"></div>
+					<div class="item"><img src="assets/imgs/fullimage1.jpg" alt="5"></div>
+				</div><!-- ./owl-carousel -->
 				<div data-role="main">
-					<div id="J_owl" class="owl-carousel owl-theme">
-						<div class="item"><a href="#J_pagearticle"><img src="assets/imgs/fullimage1.jpg" alt="1"></a></div>
-						<div class="item"><img src="assets/imgs/fullimage2.jpg" alt="2"></div>
-						<div class="item"><img src="assets/imgs/fullimage3.jpg" alt="3"></div>
-						<div class="item"><img src="assets/imgs/fullimage4.jpg" alt="4"></div>
-						<div class="item"><img src="assets/imgs/fullimage5.jpg" alt="5"></div>
-					</div><!-- ./owl-carousel -->
 					<div class="ms-padding-5">
 						<div class="ms-padding-top-5">
 							<ul data-role="listview" class="ms-top-news ui-nodisc-icon ui-alt-icon">
 								<li>
-									<a href="#J_pagearticle">
+									<a href="#">
 										<div class="img-wrap">
-											<img src="assets/imgs/news.png" alt="">
+											<img src="assets/imgs/gallery3.jpg" alt="">
 										</div>
-										<h2 class="ms-theme-title">测试题目文字</h2>
-										<p class="ms-theme-words">东莞东城出租屋的士司机王先武猝死。据了解,王先武为了多赚掉房</p>
+										<h2 class="ms-theme-title">中共中央总书记习近平莅临我司视察</h2>
+										<p class="ms-theme-words">2014年4月27日上午，中共中央总书记国家主席中央军委主席习近平先生及夫人彭丽媛莅临我司，对我司现有生产力水平作出高度评价。</p>
 									</a>
 								</li>
 							</ul>
 						</div>
 						<div class="ms-padding-top-5">
 							<div class="ui-grid-b ms-grid">
-								<div class="ui-block-a"><a href="#J_pagelist" class="ui-bar ui-bar-a ms-icon ms-icon-paper"><i class="fa fa-file-text"></i>文章列表</a></div>
-								<div class="ui-block-b"><a href="#" class="ui-bar ui-bar-a ms-icon ms-icon-chart"><i class="fa fa-bar-chart-o"></i>报表资源</a></div>
-								<div class="ui-block-c"><a href="#J_pagearticle" class="ui-bar ui-bar-a ms-icon ms-icon-tools"><i class="fa fa-building-o"></i>文章详情</a></div>
-								<div class="ui-block-a"><a href="#" class="ui-bar ui-bar-a ms-icon ms-icon-sun"><i class="fa fa-bullhorn"></i>企业活动</a></div>
-								<div class="ui-block-b"><a href="#" class="ui-bar ui-bar-a ms-icon ms-icon-magic"><i class="fa fa-gift"></i>物品交易</a></div>
-								<div class="ui-block-c"><a href="#J_pageedit" class="ui-bar ui-bar-a ms-icon ms-icon-user"><i class="fa fa-user"></i>我的资料</a></div>
+								<div class="ui-block-a"><a href="#J_pagenews" class="ui-bar ui-bar-a ms-icon ms-icon-paper"><i class="fa fa-file-text fa-icon-1"></i>新闻中心</a></div>
+								<div class="ui-block-b"><a href="#J_pageenterprice" class="ui-bar ui-bar-a ms-icon ms-icon-chart"><i class="fa fa-trophy fa-icon-2"></i>企业概况</a></div>
+								<div class="ui-block-c"><a href="#J_pagepartners" class="ui-bar ui-bar-a ms-icon ms-icon-tools"><i class="fa fa-group fa-icon-3"></i>合作伙伴</a></div>
+								<div class="ui-block-a"><a href="#J_pageproduct" class="ui-bar ui-bar-a ms-icon ms-icon-sun"><i class="fa fa-mobile-phone fa-icon-4"></i>产品天地</a></div>
+								<div class="ui-block-b"><a href="#J_pagecontact" class="ui-bar ui-bar-a ms-icon ms-icon-magic"><i class="fa fa-phone fa-icon-5"></i>联系我们</a></div>
+								<div class="ui-block-c"><a href="#J_pageboard" class="ui-bar ui-bar-a ms-icon ms-icon-user"><i class="fa fa-comments fa-icon-6"></i>留言板</a></div>
 							</div>
 						</div>
 					</div>
@@ -105,17 +105,6 @@
 					<h3 class="ms-theme-title">公司前身</h3>
 					<p class="ms-theme-article">新华网是党中央直接部署，国家通讯社新华社主办的中央重点新闻网站，以“传播中国、报道世界”为职责，以“权威声音、亲切表达”为理念，通过中（简、繁体）、英、法、西、俄、阿、日、藏、维等多种语言，24小时不间断发布全球新闻，是名副其实的“网上新闻信息总汇”。
 					依托新华社31个国内分社、180余个境外分支机构以及自有采编队伍，新华网形成了全球化新闻信息采集网络，是中国网络媒体中传播力强、覆盖面广、资讯采集手段全、传播形态多样化的全媒体信息采编发平台。</p>
-					
-					<h3 class="ms-theme-title">联系方式</h3>
-					<div id="J_mapctn" style="height: 10em; background-color: #ccc">
-						
-					</div>
-					<p class="ms-theme-article">
-						<span class="ms-theme-color-red">联系电话:</span>18260008278
-					</p>
-					<p class="ms-theme-article">
-						<span class="ms-theme-color-red">通讯地址:</span>南京市玄武区长江后街6号东大科技园6号楼
-					</p>
 				</div><!-- ./content -->
 			</div><!-- ./About -->
 			
@@ -229,105 +218,184 @@
 			</div><!-- ./product -->
 		</div><!-- ./tabs -->
 	</div><!-- ./Index Page -->
-
-	<div id="J_pagelist" data-role="page">
+	
+	<div id="J_pagenews" data-role="page">
 		<div data-role="header">
-			<h1>列表页面</h1>
-			<a data-rel="back" data-icon="back" data-iconpos="notext" class="ui-nodisc-icon"></a>
+			<h1>新闻中心</h1>
+			<a data-rel="back" data-icon="back" data-iconpos="notext"  class="ui-nodisc-icon"></a>
 		</div>
-		<div data-role="main">
-			<div class="ms-banner">
-				<img src="assets/imgs/fullimage1.jpg" alt="">
+		<div data-role="tabs">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#J_tabenterprice" class="ui-btn-active">企业新闻</a></li>
+					<li><a href="#J_tabindustry">行业新闻</a></li>
+				</ul>
 			</div>
-			<ul data-role="listview" class="ui-nodisc-icon ui-alt-icon">
-				<li>
-					<a href="#J_pagearticle">
-						<div class="img-wrap">
-							<img src="assets/imgs/news.png" alt="">
-						</div>
-						<h2 class="ms-theme-title">测试题目文字</h2>
-						<p class="ms-theme-words">东莞东城出租屋的士司机王先武猝死。据了解,王先武为了多赚掉房</p>
-					</a>
-				</li>
-				<li>
-					<a href="#J_pagearticle">
-						<div class="img-wrap">
-							<img src="assets/imgs/listimg2.jpg" alt="">
-						</div>
-						<h2 class="ms-theme-title">测试题目文字</h2>
-						<p class="ms-theme-words">东莞东城出租屋的士司机王先武猝死。据了解,王先武为了多赚掉房</p>
-					</a>
-				</li>
-				<li>
-					<a href="#J_pagearticle">
-						<div class="img-wrap">
-							<img src="assets/imgs/listimg3.jpg" alt="">
-						</div>
-						<h2 class="ms-theme-title">测试题目文字</h2>
-						<p class="ms-theme-words">东莞东城出租屋的士司机王先武猝死。据了解,王先武为了多赚掉房</p>
-					</a>
-				</li>
-				<li>
-					<a href="#J_pagearticle">
-						<div class="img-wrap">
-							<img src="assets/imgs/listimg4.jpg" alt="">
-						</div>
-						<h2 class="ms-theme-title">测试题目文字</h2>
-						<p class="ms-theme-words">东莞东城出租屋的士司机王先武猝死。据了解,王先武为了多赚掉房</p>
-					</a>
-				</li>
-				<li>
-					<a href="#J_pagearticle">
-						<div class="img-wrap">
-							<img src="assets/imgs/news.png" alt="">
-						</div>
-						<h2 class="ms-theme-title">测试题目文字</h2>
-						<p class="ms-theme-words">东莞东城出租屋的士司机王先武猝死。据了解,王先武为了多赚掉房</p>
-					</a>
-				</li>
-				<li>
-					<a href="#J_pagearticle">
-						<div class="img-wrap">
-							<img src="assets/imgs/listimg2.jpg" alt="">
-						</div>
-						<h2 class="ms-theme-title">测试题目文字</h2>
-						<p class="ms-theme-words">东莞东城出租屋的士司机王先武猝死。据了解,王先武为了多赚掉房</p>
-					</a>
-				</li>
-				<li>
-					<a href="#J_pagearticle">
-						<div class="img-wrap">
-							<img src="assets/imgs/listimg3.jpg" alt="">
-						</div>
-						<h2 class="ms-theme-title">测试题目文字</h2>
-						<p class="ms-theme-words">东莞东城出租屋的士司机王先武猝死。据了解,王先武为了多赚掉房</p>
-					</a>
-				</li>
-				<li>
-					<a href="#J_pagearticle">
-						<div class="img-wrap">
-							<img src="assets/imgs/listimg4.jpg" alt="">
-						</div>
-						<h2 class="ms-theme-title">测试题目文字</h2>
-						<p class="ms-theme-words">东莞东城出租屋的士司机王先武猝死。据了解,王先武为了多赚掉房</p>
-					</a>
-				</li>
-			</ul>
+			<div id="J_tabenterprice">
+				<ul data-role="listview" class="ui-nodisc-icon ui-alt-icon">
+					<li>
+						<a href="#J_pagearticle">
+							<div class="img-wrap">
+								<img src="assets/imgs/gallery1.jpg" alt="1">
+							</div>
+							<h2 class="ms-theme-title">中共中央总书记习近平莅临我司视察</h2>
+							<p class="ms-theme-words">2014年4月27日上午，中共中央总书记国家主席中央军委主席习近平先生及夫人彭丽媛莅临我司，对我司现有生产力水平作出高度评价。</p>
+						</a>
+					</li>
+					<li>
+						<a href="#J_pagearticle">
+							<div class="img-wrap">
+								<img src="assets/imgs/gallery1.jpg" alt="1">
+							</div>
+							<h2 class="ms-theme-title">中共中央总书记习近平莅临我司视察</h2>
+							<p class="ms-theme-words">2014年4月27日上午，中共中央总书记国家主席中央军委主席习近平先生及夫人彭丽媛莅临我司，对我司现有生产力水平作出高度评价。</p>
+						</a>
+					</li>
+					<li>
+						<a href="#J_pagearticle">
+							<div class="img-wrap">
+								<img src="assets/imgs/gallery1.jpg" alt="1">
+							</div>
+							<h2 class="ms-theme-title">中共中央总书记习近平莅临我司视察</h2>
+							<p class="ms-theme-words">2014年4月27日上午，中共中央总书记国家主席中央军委主席习近平先生及夫人彭丽媛莅临我司，对我司现有生产力水平作出高度评价。</p>
+						</a>
+					</li>
+					<li>
+						<a href="#J_pagearticle">
+							<div class="img-wrap">
+								<img src="assets/imgs/gallery1.jpg" alt="1">
+							</div>
+							<h2 class="ms-theme-title">中共中央总书记习近平莅临我司视察</h2>
+							<p class="ms-theme-words">2014年4月27日上午，中共中央总书记国家主席中央军委主席习近平先生及夫人彭丽媛莅临我司，对我司现有生产力水平作出高度评价。</p>
+						</a>
+					</li>
+					<li>
+						<a href="#J_pagearticle">
+							<div class="img-wrap">
+								<img src="assets/imgs/gallery1.jpg" alt="1">
+							</div>
+							<h2 class="ms-theme-title">中共中央总书记习近平莅临我司视察</h2>
+							<p class="ms-theme-words">2014年4月27日上午，中共中央总书记国家主席中央军委主席习近平先生及夫人彭丽媛莅临我司，对我司现有生产力水平作出高度评价。</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div id="J_tabindustry">
+				<ul data-role="listview" class="ui-nodisc-icon ui-alt-icon">
+					<li>
+						<a href="#J_pagearticle">
+							<div class="img-wrap">
+								<img src="assets/imgs/gallery2.jpg" alt="1">
+							</div>
+							<h2 class="ms-theme-title">智能手机正式迈入云服务时代</h2>
+							<p class="ms-theme-words">如今苹果、三星等巨头手机厂商正在大力发展自己的云服务基础设施，其手机云服务应用已基本内置自己的手机服务。</p>
+						</a>
+					</li>
+					<li>
+						<a href="#J_pagearticle">
+							<div class="img-wrap">
+								<img src="assets/imgs/gallery2.jpg" alt="1">
+							</div>
+							<h2 class="ms-theme-title">智能手机正式迈入云服务时代</h2>
+							<p class="ms-theme-words">如今苹果、三星等巨头手机厂商正在大力发展自己的云服务基础设施，其手机云服务应用已基本内置自己的手机服务。</p>
+						</a>
+					</li>
+					<li>
+						<a href="#J_pagearticle">
+							<div class="img-wrap">
+								<img src="assets/imgs/gallery2.jpg" alt="1">
+							</div>
+							<h2 class="ms-theme-title">智能手机正式迈入云服务时代</h2>
+							<p class="ms-theme-words">如今苹果、三星等巨头手机厂商正在大力发展自己的云服务基础设施，其手机云服务应用已基本内置自己的手机服务。</p>
+						</a>
+					</li>
+					<li>
+						<a href="#J_pagearticle">
+							<div class="img-wrap">
+								<img src="assets/imgs/gallery2.jpg" alt="1">
+							</div>
+							<h2 class="ms-theme-title">智能手机正式迈入云服务时代</h2>
+							<p class="ms-theme-words">如今苹果、三星等巨头手机厂商正在大力发展自己的云服务基础设施，其手机云服务应用已基本内置自己的手机服务。</p>
+						</a>
+					</li>
+					<li>
+						<a href="#J_pagearticle">
+							<div class="img-wrap">
+								<img src="assets/imgs/gallery2.jpg" alt="1">
+							</div>
+							<h2 class="ms-theme-title">智能手机正式迈入云服务时代</h2>
+							<p class="ms-theme-words">如今苹果、三星等巨头手机厂商正在大力发展自己的云服务基础设施，其手机云服务应用已基本内置自己的手机服务。</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div><!-- ./Tab Page -->
+	</div><!-- ./News Center -->
+
+	<div id="J_pageenterprice" data-role="page">
+		<div data-role="header">
+			<h1>企业概况</h1>
+			<a data-rel="back" data-icon="back" data-iconpos="notext"  class="ui-nodisc-icon"></a>
 		</div>
-	</div><!-- ./List Page -->
+		
+	</div><!-- ./Enterprice Overview -->
+	
+	<div id="J_pageproduct" data-role="page">
+		<div data-role="header">
+			<h1>产品天地</h1>
+			<a data-rel="back" data-icon="back" data-iconpos="notext"  class="ui-nodisc-icon"></a>
+		</div>
+		
+	</div><!-- ./Product Center -->
+
+	<div id="J_pagepartners" data-role="page">
+		<div data-role="header">
+			<h1>合作伙伴</h1>
+			<a data-rel="back" data-icon="back" data-iconpos="notext"  class="ui-nodisc-icon"></a>
+		</div>
+		
+	</div><!-- ./Partners -->
+
+	<div id="J_pageboard" data-role="page">
+		<div data-role="header">
+			<h1>留言板</h1>
+			<a data-rel="back" data-icon="back" data-iconpos="notext"  class="ui-nodisc-icon"></a>
+		</div>
+		
+	</div><!-- ./Board -->
+
+	<div id="J_pagecontact" data-role="page">
+		<div data-role="header">
+			<h1>联系我们</h1>
+			<a data-rel="back" data-icon="back" data-iconpos="notext"  class="ui-nodisc-icon"></a>
+		</div>
+		<div class="ui-content ms-article">
+			<h3 class="ms-theme-title">我们的位置</h3>
+			<div id="J_mapctn" style="height: 15em; background-color: #ccc">
+						
+			</div>
+			<h3 class="ms-theme-title">联系方式</h3>
+			<p class="ms-theme-article">
+				<span class="ms-theme-color-red">联系电话:</span>18260008278
+			</p>
+			<p class="ms-theme-article">
+				<span class="ms-theme-color-red">通讯地址:</span>南京市玄武区长江后街6号东大科技园6号楼
+			</p>
+		</div>
+	</div><!-- ./Contact -->
 	
 	<div id="J_pagearticle" data-role="page">
 		<div data-role="header">
-			<h1>文章页面</h1>
+			<h1>阅读新闻</h1>
 			<a data-rel="back" data-icon="back" data-iconpos="notext"  class="ui-nodisc-icon"></a>
 		</div>
 		<div role="main" class="ui-content ms-article">
-			<h2 class="tc ms-theme-title">最美应用发布</h2>
+			<h2 class="tc ms-theme-title">智能手机正式迈入云服务时代</h2>
 			<p class="tc ms-theme-summary">
-				发布者：最美应用&nbsp;&nbsp;时间：2014-04-24
+				发布者：官方发布&nbsp;&nbsp;时间：2014-04-24
 			</p>
 			<p class="ms-banner">
-				<img src="assets/imgs/news.png" alt="">
+				<img src="assets/imgs/gallery1.jpg" alt="">
 			</p>
 			<div class="ms-theme-article">
 				<p>
@@ -350,33 +418,7 @@
 				</p>
 			</div>
 		</div>
-	</div><!-- ./Article Page -->
-	
-	<div id="J_pageedit" data-role="page">
-		<div data-role="header">
-			<h1>我的资料</h1>
-			<a data-rel="back" data-icon="back" data-iconpos="notext"  class="ui-nodisc-icon"></a>
-		</div>
-		<div class="ui-content">
-			<label for="iptName">用户名</label>
-			<input id="iptName" type="text" placeholder="输入你的姓名" data-clear-btn="true">
-			<label for="iptEmail">邮箱</label>
-			<input id="iptEmail" type="email" placeholder="输入你的邮箱" data-clear-btn="true">
-			<label for="iptText">个人简介</label>
-			<textarea id="iptText" placeholder="在这里写你的资料"></textarea>
-			<p class="ms-theme-summary">
-				<span class="ms-theme-color-red">温馨提示:</span>请输入比较详细的个人资料，以便我们的工作人员到时跟您联系。
-			</p>
-			<div class="ui-grid-a">
-				<div class="ui-block-a">
-					<a href="###" class="ui-btn ui-corner-all ui-shadow">确认修改</a>
-				</div>
-				<div class="ui-block-b">
-					<a data-rel="back" class="ui-btn ui-corner-all ui-btn-b ui-shadow">取消</a>
-				</div>
-			</div>
-		</div>
-	</div><!-- ./Feed Page -->
+	</div>
 
 	<script src="assets/jquery-1.11.0.min.js"></script>
 	<script src="assets/jquery.mobile-1.4.2/jquery.mobile-1.4.2.min.js"></script>

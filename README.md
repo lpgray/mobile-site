@@ -1,28 +1,31 @@
 Offical Mobile Site Static Pages
 ==========
 
-### Widget
-- Welcome DONE
-- Carousel DONE
-- Image Lazy Load
-- Image Preview(panel)
-- Nav
+## Function Requirement
+- 新闻中心 (Nav, Page List) DONE
+	- 企业新闻
+	- 行业新闻
+- 企业概况
+	- 企业简介
+	- 业务范围
+	- 历史里程
+	- 企业文化
+- 合作伙伴
+- 产品天地 (Image Gallery) DOING
+	- 产品目录
+		- 产品图片
+		- 说明文字
+- 联系我们
+	- 基本信息
+- 留言板 TODO
 
-### Plan
-- Project structure  DONE
-- Carousel  DONE
-- theme restructure
-	- put jqmobile and ms together DONE
-- Page
-	- home DONE
-	- about DONE
-	- feed DONE
-	- article DONE
-	- list DONE
-	- welcome to use DONE
-	- gallery(product, logo ) DONE
-- widgets
-	- image preview DONE
-- icons & colors design
-	- win8 style
-- moke data and mvc
+## Theme
+- win8
+
+## Common Module
+- Page: Home DONE
+- Page: Article DONE
+- Page: Article List DONE
+- Page: Image Gallery
+- Widget: Navigation
+- Widget: Carousel
