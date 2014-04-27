@@ -21,9 +21,9 @@ Offical Mobile Site Static Pages
 	- article DONE
 	- list DONE
 	- welcome to use DONE
-	- gallery 
+	- gallery(product, logo ) DONE
 - widgets
-	- image preview
+	- image preview DONE
 - icons & colors design
 	- win8 style
 - moke data and mvc

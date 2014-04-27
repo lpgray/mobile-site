@@ -16,52 +16,82 @@
 	<div id="J_pagewelcome" data-role="page">
 		<div id="J_welcomecarousel" class="welcome-carousel">
 			<div class="item">
-				<h1>欢迎使用一</h1>
-				<p>欢迎使用一解说文字，测试文字一二三四</p>
+				<img src="assets/imgs/icon2.png" alt="">
+				<h1>超前</h1>
+				<p>领先的UI设计团队</p>
 			</div>
 			<div class="item">
-				<h1>欢迎使用二</h1>
-				<p>欢迎使用一解说文字，测试文字一二三四</p>
+				<img src="assets/imgs/icon1.png" alt="">
+				<h1>精湛</h1>
+				<p>顶尖的技术工程师</p>
 			</div>
 			<div class="item">
-				<h1>欢迎使用三</h1>
-				<p>欢迎使用一解说文字，测试文字一二三四</p>
-				<a href="#J_pagehome" class="ui-btn ui-shadow ui-corner-all">开始访问</a>
+				<img src="assets/imgs/icon3.png" alt="">
+				<h1>专注</h1>
+				<p>专注移动互联网产品研发</p>
+				<br><br>
+				<a href="#J_pagehome" class="ui-btn ui-shadow ui-corner-all">访问网站</a>
 			</div>
 		</div>
 	</div> <!--./welcome page -->
 
 	<div id="J_pagehome" data-role="page">
+		<div data-role="panel" id="J_searchpanel" data-theme="b" data-position="right">
+		    <div class="ui-content">
+		    	<input type="text" data-type="search">
+		    </div>
+		</div><!-- /panel -->
 		<div data-role="tabs">
+			<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#J_home" class="ui-nodisc-icon ui-icon-home ui-btn-icon-top ui-btn-active">首页</a></li>
+						<li><a href="#J_about" class="ui-nodisc-icon ui-icon-info ui-btn-icon-top">关于我们</a></li>
+						<li><a href="#J_client" class="ui-nodisc-icon ui-icon-shop ui-btn-icon-top">合作客户</a></li>
+						<li><a href="#J_product" class="ui-nodisc-icon ui-icon-grid ui-btn-icon-top">产品展示</a></li>
+					</ul>
+				</div>
+			</div>
 			
 			<div id="J_home">
 				<div data-role="header">
 					<h1>企业官网移动版</h1>
+					<a href="#J_searchpanel" data-icon="search" data-iconpos="notext" class="ui-nodisc-icon ui-btn-right">Search</a>
 				</div>
-				<div id="J_owl" class="owl-carousel owl-theme">
-					<div class="item"><a href="#J_pagearticle"><img src="assets/imgs/fullimage1.jpg" alt="1"></a></div>
-					<div class="item"><img src="assets/imgs/fullimage2.jpg" alt="2"></div>
-					<div class="item"><img src="assets/imgs/fullimage3.jpg" alt="3"></div>
-					<div class="item"><img src="assets/imgs/fullimage4.jpg" alt="4"></div>
-					<div class="item"><img src="assets/imgs/fullimage5.jpg" alt="5"></div>
-				</div><!-- ./owl-carousel -->
-				<div class="ui-content">
-					<a href="#J_pagearticle" class="ms-top-news clearfix">
-						<img src="assets/imgs/news.png" alt="app">
-						<div class="ms-news-ctn ui-icon-carat-r">
-							<h4 class="ms-theme-title">企业最新热点新闻</h4>
-							<p class="ms-theme-words">某某企业最新热点新闻简单摘要，某某年某某月某某日。</p>
+				<div data-role="main">
+					<div id="J_owl" class="owl-carousel owl-theme">
+						<div class="item"><a href="#J_pagearticle"><img src="assets/imgs/fullimage1.jpg" alt="1"></a></div>
+						<div class="item"><img src="assets/imgs/fullimage2.jpg" alt="2"></div>
+						<div class="item"><img src="assets/imgs/fullimage3.jpg" alt="3"></div>
+						<div class="item"><img src="assets/imgs/fullimage4.jpg" alt="4"></div>
+						<div class="item"><img src="assets/imgs/fullimage5.jpg" alt="5"></div>
+					</div><!-- ./owl-carousel -->
+					<div class="ms-padding-5">
+						<div class="ms-padding-top-5">
+							<ul data-role="listview" class="ms-top-news ui-nodisc-icon ui-alt-icon">
+								<li>
+									<a href="#J_pagearticle">
+										<div class="img-wrap">
+											<img src="assets/imgs/news.png" alt="">
+										</div>
+										<h2 class="ms-theme-title">测试题目文字</h2>
+										<p class="ms-theme-words">东莞东城出租屋的士司机王先武猝死。据了解,王先武为了多赚掉房</p>
+									</a>
+								</li>
+							</ul>
 						</div>
-					</a><!-- /.top-news -->
-					<div class="ui-grid-b ms-grid">
-						<div class="ui-block-a"><a href="#J_pagelist" class="ui-bar ui-bar-a ms-icon ms-icon-paper"><i class="fa fa-file-text"></i>文章列表</a></div>
-						<div class="ui-block-b"><a href="#" class="ui-bar ui-bar-a ms-icon ms-icon-chart"><i class="fa fa-bar-chart-o"></i>报表资源</a></div>
-						<div class="ui-block-c"><a href="#J_pagearticle" class="ui-bar ui-bar-a ms-icon ms-icon-tools"><i class="fa fa-building-o"></i>文章详情</a></div>
-						<div class="ui-block-a"><a href="#" class="ui-bar ui-bar-a ms-icon ms-icon-sun"><i class="fa fa-bullhorn"></i>企业活动</a></div>
-						<div class="ui-block-b"><a href="#" class="ui-bar ui-bar-a ms-icon ms-icon-magic"><i class="fa fa-gift"></i>物品交易</a></div>
-						<div class="ui-block-c"><a href="#J_pageedit" class="ui-bar ui-bar-a ms-icon ms-icon-user"><i class="fa fa-user"></i>我的资料</a></div>
-					</div><!-- ./ui-grid -->
-				</div><!-- ./content -->
+						<div class="ms-padding-top-5">
+							<div class="ui-grid-b ms-grid">
+								<div class="ui-block-a"><a href="#J_pagelist" class="ui-bar ui-bar-a ms-icon ms-icon-paper"><i class="fa fa-file-text"></i>文章列表</a></div>
+								<div class="ui-block-b"><a href="#" class="ui-bar ui-bar-a ms-icon ms-icon-chart"><i class="fa fa-bar-chart-o"></i>报表资源</a></div>
+								<div class="ui-block-c"><a href="#J_pagearticle" class="ui-bar ui-bar-a ms-icon ms-icon-tools"><i class="fa fa-building-o"></i>文章详情</a></div>
+								<div class="ui-block-a"><a href="#" class="ui-bar ui-bar-a ms-icon ms-icon-sun"><i class="fa fa-bullhorn"></i>企业活动</a></div>
+								<div class="ui-block-b"><a href="#" class="ui-bar ui-bar-a ms-icon ms-icon-magic"><i class="fa fa-gift"></i>物品交易</a></div>
+								<div class="ui-block-c"><a href="#J_pageedit" class="ui-bar ui-bar-a ms-icon ms-icon-user"><i class="fa fa-user"></i>我的资料</a></div>
+							</div>
+						</div>
+					</div>
+				</div><!-- ./main -->
 			</div><!-- ./tab-home -->
 			
 			<div id="J_about">
@@ -197,31 +227,19 @@
 					</div>
 				</div><!-- ./content -->
 			</div><!-- ./product -->
-
-			<div data-role="footer" data-position="fixed" data-tap-toggle="false">
-				<div data-role="navbar">
-					<ul>
-						<li><a href="#J_home" class="ui-icon-home ui-btn-icon-top ui-btn-active">首页</a></li>
-						<li><a href="#J_about" class="ui-icon-info ui-btn-icon-top">关于我们</a></li>
-						<li><a href="#J_client" class="ui-icon-shop ui-btn-icon-top">合作客户</a></li>
-						<li><a href="#J_product" class="ui-icon-grid ui-btn-icon-top">产品展示</a></li>
-					</ul>
-				</div>
-			</div><!-- ./footer -->
-
 		</div><!-- ./tabs -->
 	</div><!-- ./Index Page -->
 
 	<div id="J_pagelist" data-role="page">
 		<div data-role="header">
 			<h1>列表页面</h1>
-			<a data-rel="back" data-icon="back" data-iconpos="notext"></a>
+			<a data-rel="back" data-icon="back" data-iconpos="notext" class="ui-nodisc-icon"></a>
 		</div>
 		<div data-role="main">
 			<div class="ms-banner">
 				<img src="assets/imgs/fullimage1.jpg" alt="">
 			</div>
-			<ul data-role="listview">
+			<ul data-role="listview" class="ui-nodisc-icon ui-alt-icon">
 				<li>
 					<a href="#J_pagearticle">
 						<div class="img-wrap">
@@ -301,7 +319,7 @@
 	<div id="J_pagearticle" data-role="page">
 		<div data-role="header">
 			<h1>文章页面</h1>
-			<a data-rel="back" data-icon="back" data-iconpos="notext"></a>
+			<a data-rel="back" data-icon="back" data-iconpos="notext"  class="ui-nodisc-icon"></a>
 		</div>
 		<div role="main" class="ui-content ms-article">
 			<h2 class="tc ms-theme-title">最美应用发布</h2>
@@ -337,7 +355,7 @@
 	<div id="J_pageedit" data-role="page">
 		<div data-role="header">
 			<h1>我的资料</h1>
-			<a data-rel="back" data-icon="back" data-iconpos="notext"></a>
+			<a data-rel="back" data-icon="back" data-iconpos="notext"  class="ui-nodisc-icon"></a>
 		</div>
 		<div class="ui-content">
 			<label for="iptName">用户名</label>

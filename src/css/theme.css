@@ -291,8 +291,8 @@ html .ui-alt-icon .ui-radio-off:after {
 html .ui-bar-a .ui-bar-inherit,
 html .ui-body-a .ui-bar-inherit,
 html body .ui-group-theme-a .ui-bar-inherit {
-	background-color: 		#D6070F /*{a-bar-background-color}*/;
-	border-color:	 		#B61414 /*{a-bar-border}*/;
+	background-color: 		#E6212B /*{a-bar-background-color}*/;
+	border-color:	 		#EB1F28 /*{a-bar-border}*/;
 	color: 					#fff /*{a-bar-color}*/;
 	text-shadow: 0 1px 0 #A80606;
 	font-weight: bold;
@@ -642,31 +642,34 @@ button[disabled],
 
 
 
-/*
+/* -------------------------------------------------------------------------------------
  * Mobile Site Theme
  */
+/* common */
 .ui-content{padding: .5em;}
-
 .ui-page-theme-a .ms-grid a:visited,
 html .ui-bar-a .ms-grid a:visited, 
 html .ui-body-a .ms-grid a:visited,
 html body .ui-group-theme-a .ms-grid a:visited,
 a.ms-theme-words, .ms-theme-words{color: #666;}
-a.ms-top-news, .ms-grid .ui-bar, .ms-grid{background-color: #fefefe; border-color: #e2e2e2;}
-a.ms-top-news:active, .ms-grid .ui-bar:active{background-color:#DFDFDF; border-color:#D3D0D0;}
 
+.ms-theme-color-red{color: #BD2020;}
 .ms-padding-5{padding: 0 .5em;}
+.ms-padding-top-5{padding-top: .5em;}
 
 /* ms-welcome-carousel */
-#J_pagewelcome{background: #ddd;}
-.welcome-carousel .item{background-color: #3fbf79; color: #fff;}
+.welcome-carousel .item{background-color: #ececec; color: #333; text-shadow: 0 1px 0px rgba(0,0,0,.1);}
 .welcome-carousel .owl-controls{margin-top: -100px;}
+.welcome-carousel .owl-controls .owl-page span{background-color: #7A7979;}
+.welcome-carousel .item img{width: 118px; display: block; margin: 3em auto 2em;}
+.welcome-carousel .item h1{color: #BD2020;}
+.welcome-carousel .item p{color: #666;}
 
 /* ms-article */
 .ms-theme-title{color: #333;}
 .ms-theme-summary{color: #AAA;}
 .ms-theme-article{color: #666;}
-.ms-theme-color-red{color: #BD2020;}
+
 
 /* list */
 .ui-page-theme-a .ui-listview .ui-btn,
@@ -675,38 +678,35 @@ a.ms-top-news:active, .ms-grid .ui-bar:active{background-color:#DFDFDF; border-c
 	background-color: #fefefe; border-color: #e2e2e2; text-shadow: none;
 }
 .ui-page-theme-a .ui-listview .ui-btn:active{background-color:#DFDFDF; border-color:#D3D0D0;}
-
-
-/* icon */
-.ui-footer .ui-btn-icon-top:after,
-.ui-header .ui-btn-icon-notext:after,
-.ui-listview .ui-btn-icon-right:after
-{background-color: transparent;}
+.ui-page-theme-a .ui-listview .ui-btn:after{opacity: .2;}
 
 /* header */
 .ui-header .ui-btn,
 .ui-header .ui-btn:hover,
 .ui-header .ui-btn:visited{
-	background-color:#D6070F;
-	border-color: #BE2121;
+	background-color: #E6212B;
+	border-color: #CF2021;
 	border-radius: 0;
 }
 .ui-header .ui-btn-left,
 .ui-header .ui-btn-left:hover,
-.ui-header .ui-btn-left:visited{border-color: #EC2B2B}
-.ui-header .ui-btn-left:after{border-color: #C71919;}
+.ui-header .ui-btn-left:visited,
+.ui-header .ui-btn-right,
+.ui-header .ui-btn-right:hover,
+.ui-header .ui-btn-right:visited{border-color: #CF2021}
+.ui-header .ui-btn-left:after,
+.ui-header .ui-btn-right:after{border-color: #F81C24;}
 
-/* footer */
-.ui-footer.ui-bar-inherit{border-color: #111; background: #111;box-shadow: 0 -2px 3px rgba(0,0,0,.3)}
-.ui-footer .ui-btn,
-.ui-footer .ui-btn:hover,
-.ui-footer .ui-btn:visited{
+/* ui-navbar */
+.ui-tabs .ui-navbar .ui-btn,
+.ui-tabs .ui-navbar .ui-btn:hover,
+.ui-tabs .ui-navbar .ui-btn:visited{
 	background-color: #111;
 	color: #fff;
 	border-color:#131313;
 }
-.ui-page-theme-a .ui-footer .ui-btn:active,
-.ui-page-theme-a .ui-footer .ui-btn-active{
+.ui-tabs .ui-navbar .ui-btn:active,
+.ui-tabs .ui-navbar .ui-btn-active{
 	background-color: #222;
 	border-color:#111;
 	box-shadow: inset 0 2px 4px rgba(0,0,0,.8);
@@ -714,6 +714,8 @@ a.ms-top-news:active, .ms-grid .ui-bar:active{background-color:#DFDFDF; border-c
 }
 
 /* ms-grid */
+.ms-grid .ui-bar, .ms-grid{background-color: #fefefe; border-color: #e2e2e2;}
+.ms-grid .ui-bar:active{background-color:#DFDFDF; border-color:#D3D0D0;}
 .ms-grid a{text-shadow: none; font-weight: normal;}
 .ms-grid .ui-bar{background-color: #fefefe;}
 .ms-grid .fa-file-text{color: #E0C261;}
