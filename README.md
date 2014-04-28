@@ -12,7 +12,8 @@ Offical Mobile Site Static Pages
 	- 企业文化
 - 合作伙伴
 - 产品天地 (Image Gallery) DOING
-	- 产品目录
+	- 产品目录 DONE
+	- 详情页面 DOING	
 		- 产品图片
 		- 说明文字
 - 联系我们
