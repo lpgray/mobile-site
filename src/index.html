@@ -8,7 +8,6 @@
 	<link rel="stylesheet" href="assets/owl-carousel/owl.carousel.css">
 	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/app.css">
-	
 	<link rel="stylesheet" href="css/theme.css">
 </head>
 <body>
@@ -36,27 +35,25 @@
 	</div> <!--./welcome page -->
 
 	<div id="J_pagehome" data-role="page">
-		<div data-role="panel" id="J_searchpanel" data-theme="b" data-position="right">
+		<!-- <div data-role="panel" id="J_searchpanel" data-theme="b" data-position="right">
 		    <div class="ui-content">
 		    	<input type="text" data-type="search">
 		    </div>
-		</div><!-- /panel -->
+		</div> /panel -->
 		<div data-role="tabs">
 			<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-corners="false">
 				<div data-role="navbar">
 					<ul>
 						<li><a href="#J_home" class="ui-nodisc-icon ui-icon-home ui-btn-icon-top ui-btn-active">首页</a></li>
 						<li><a href="#J_about" class="ui-nodisc-icon ui-icon-info ui-btn-icon-top">关于我们</a></li>
-						<li><a href="#J_client" class="ui-nodisc-icon ui-icon-shop ui-btn-icon-top">合作客户</a></li>
-						<li><a href="#J_product" class="ui-nodisc-icon ui-icon-grid ui-btn-icon-top">产品展示</a></li>
+						<li><a href="#J_search" class="ui-nodisc-icon ui-icon-search ui-btn-icon-top">搜索</a></li>
+						<li><a href="#J_call" class="ui-nodisc-icon ui-icon-phone ui-btn-icon-top">一键呼叫</a></li>
 					</ul>
 				</div>
 			</div>
-			
 			<div id="J_home">
 				<div data-role="header">
 					<h1>企业标准化APP</h1>
-					<a href="#J_searchpanel" data-icon="search" data-iconpos="notext" class="ui-nodisc-icon ui-btn-right">Search</a>
 				</div>
 				<div id="J_owl" class="owl-carousel owl-theme">
 					<div class="item"><a href="#"><img src="assets/imgs/fullimage5.jpg" alt="1"></a></div>
@@ -70,7 +67,7 @@
 						<div class="ms-padding-top-5">
 							<ul data-role="listview" class="ms-top-news ui-nodisc-icon ui-alt-icon">
 								<li>
-									<a href="#">
+									<a href="#J_pagearticle">
 										<div class="img-wrap">
 											<img src="assets/imgs/gallery3.jpg" alt="">
 										</div>
@@ -108,18 +105,21 @@
 				</div><!-- ./content -->
 			</div><!-- ./About -->
 			
-			<div id="J_client">
+			<div id="J_search">
 				<div data-role="header">
-					<h1>合作客户</h1>
+					<h1>搜索</h1>
 				</div>
 				<div class="ui-content">
-					
+					<input type="search" placeholder="搜索新闻、产品、客户等信息">
 				</div><!-- ./content -->
 			</div><!-- ./search -->
 
-			<div id="J_product">
+			<div id="J_call">
 				<div data-role="header">
-					<h1>产品展示</h1>
+					<h1>呼叫</h1>
+				</div>
+				<div class="ui-content">
+					<h2 class="tc">18260008278</h2>
 				</div>
 			</div><!-- ./product -->
 		</div><!-- ./tabs -->
@@ -128,7 +128,7 @@
 	<div id="J_pagenews" data-role="page">
 		<div data-role="header">
 			<h1>新闻中心</h1>
-			<a data-rel="back" data-icon="back" data-iconpos="notext"  class="ui-nodisc-icon"></a>
+			<a data-rel="back" data-icon="carat-l" data-iconpos="notext"  class="ui-nodisc-icon"></a>
 		</div>
 		<div data-role="tabs">
 			<div data-role="navbar">
@@ -241,38 +241,99 @@
 	<div id="J_pageenterprice" data-role="page">
 		<div data-role="header">
 			<h1>企业概况</h1>
-			<a data-rel="back" data-icon="back" data-iconpos="notext"  class="ui-nodisc-icon"></a>
+			<a data-rel="back" data-icon="carat-l" data-iconpos="notext"  class="ui-nodisc-icon"></a>
 		</div>
-		
+		<div data-role="tabs">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#J_timeline">历史里程</a></li>
+					<li><a href="#J_biz">业务范围</a></li>
+					<li><a href="#J_art">企业文化</a></li>
+				</ul>
+			</div>
+			<div id="J_timeline">
+				<h2 class="tc">时间线</h2>
+				<div class="ms-timeline clearfix">
+					<div class="spine"></div>
+					<div class="separator">
+						<div class="separator-inner">
+							<p>1998</p>
+						</div>
+					</div>
+					<div class="column column-left">
+						<div class="column-inner">
+							<p><span class="ms-theme-color-red">1998年1月</span>公司成立</p>
+						</div>
+					</div>
+					<div class="separator">
+						<div class="separator-inner">
+							<p>2011</p>
+						</div>
+					</div>
+					<div class="column column-right">
+						<div class="column-inner">
+							<p><span class="ms-theme-color-red">2011年2月</span>Facebook决定将它添加到他们的网站设计上</p>
+						</div>
+					</div>
+					<div class="column column-left">
+						<div class="column-inner">
+							<p><span class="ms-theme-color-red">2011年1月</span>Facebook决定将它添加到他们的网站设计上</p>
+							<a href="#"><img src="assets/imgs/gallery4.jpg" alt=""></a>
+						</div>
+					</div>
+					<div class="separator">
+						<div class="separator-inner">
+							<p>2012</p>
+						</div>
+					</div>
+					<div class="column column-left">
+						<div class="column-inner">
+							<p><span class="ms-theme-color-red">2012年11月</span>我们收集了一些jQuery timeline 插件，您可以选择您喜欢的添加到您的网站中</p>
+						</div>
+					</div>
+					<div class="column column-right">
+						<div class="column-inner">
+							<p><span class="ms-theme-color-red">2012年12月</span>选择一个插件添加到您的网页，来增强您的网站的互动性</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="J_biz">
+				<h2 class="tc">业务范围</h2>
+			</div>
+			<div id="J_art">
+				<h2 class="tc">企业文化</h2>
+			</div>
+		</div>
 	</div><!-- ./Enterprice Overview -->
 	
 	<div id="J_pageproduct" data-role="page">
 		<div data-role="header">
 			<h1>产品天地</h1>
-			<a data-rel="back" data-icon="back" data-iconpos="notext"  class="ui-nodisc-icon"></a>
+			<a data-rel="back" data-icon="carat-l" data-iconpos="notext"  class="ui-nodisc-icon"></a>
 		</div>
 		<div data-role="main">
 			<div class="ui-grid-a ms-gallery">
 				<div class="ui-block-a">
-					<a href="#">
+					<a href="#J_pageimage">
 						<img src="assets/imgs/product.jpg" alt="">
 						<h2>苏宁易购客户端</h2>
 					</a>
 				</div>
 				<div class="ui-block-b">
-					<a href="#">
+					<a href="#J_pageimage">
 						<img src="assets/imgs/product2.jpg" alt="">
 						<h2>渣打银行客户端</h2>
 					</a>
 				</div>
 				<div class="ui-block-a">
-					<a href="#">
+					<a href="#J_pageimage">
 						<img src="assets/imgs/product1.jpg" alt="">
 						<h2>苏宁易购客户端</h2>
 					</a>
 				</div>
 				<div class="ui-block-b">
-					<a href="#">
+					<a href="#J_pageimage">
 						<img src="assets/imgs/product3.jpg" alt="">
 						<h2>渣打银行客户端</h2>
 					</a>
@@ -284,23 +345,76 @@
 	<div id="J_pagepartners" data-role="page">
 		<div data-role="header">
 			<h1>合作伙伴</h1>
-			<a data-rel="back" data-icon="back" data-iconpos="notext"  class="ui-nodisc-icon"></a>
+			<a data-rel="back" data-icon="carat-l" data-iconpos="notext"  class="ui-nodisc-icon"></a>
 		</div>
-		
 	</div><!-- ./Partners -->
 
 	<div id="J_pageboard" data-role="page">
 		<div data-role="header">
 			<h1>留言板</h1>
-			<a data-rel="back" data-icon="back" data-iconpos="notext"  class="ui-nodisc-icon"></a>
+			<a data-rel="back" data-icon="carat-l" data-iconpos="notext"  class="ui-nodisc-icon">back</a>
+			<a href="#J_pagefeed" data-icon="comment" data-iconpos="notext" class="ui-nodisc-icon ui-btn-right">feed</a>
 		</div>
-		
+		<div data-role="main">
+			<ul data-role="listview" class="ms-feed-list">
+				<li>
+					<time class="ui-li-aside">04-28 11:02</time>
+					<h2>张先生</h2>
+					<p>对你们的产品和业务感兴趣，也许未来会有机会合作</p>
+				</li>
+				<li>
+					<time class="ui-li-aside">04-28 11:02</time>
+					<h2>张先生</h2>
+					<p>对你们的产品和业务感兴趣，也许未来会有机会合作也许未来会有机会合作</p>
+				</li>
+				<li>
+					<time class="ui-li-aside">04-28 11:02</time>
+					<h2>张先生</h2>
+					<p>对你们的产品和业务感兴趣，也许未来会有机会合作对你们的产品和业务感兴趣，也许未来会有机会合作</p>
+				</li>
+				<li>
+					<time class="ui-li-aside">04-28 11:02</time>
+					<h2>张先生</h2>
+					<p>对你们的产品和业务感兴趣，也许未来会有机会合作</p>
+				</li>
+				<li>
+					<time class="ui-li-aside">04-28 11:02</time>
+					<h2>张先生</h2>
+					<p>对你们的产品和业务感兴趣，也许未来会有机会合作</p>
+				</li>
+				<li>
+					<time class="ui-li-aside">04-28 11:02</time>
+					<h2>张先生</h2>
+					<p>对你们的产品和业务感兴趣，也许未来会有机会合作，对你们的产品和业务感兴趣，也许未来会有机会合作对你们的产品和业务感兴趣，也许未来会有机会合作</p>
+				</li>
+			</ul>
+		</div>
 	</div><!-- ./Board -->
+	
+	<div id="J_pagefeed" data-role="page">
+		<div data-role="header">
+			<h1>写下您的留言</h1>
+			<a data-rel="back" data-icon="carat-l" data-iconpos="notext"  class="ui-nodisc-icon"></a>
+		</div>
+		<div class="ui-content">
+			<input type="text" placeholder="您的称呼" data-clear-btn="true">
+			<input type="tel" placeholder="您的手机号" data-clear-btn="true">
+			<textarea style="height: 100px" placeholder="写下您的评论"></textarea>
+		</div>
+		<div class="ui-grid-a">
+			<div class="ui-block-a">
+				<a href="#" class="ui-btn ui-corner-all ui-shadow">确认留言</a>
+			</div>
+			<div class="ui-block-b">
+				<a data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-b">取消</a>
+			</div>
+		</div>
+	</div><!-- ./Feed -->
 
 	<div id="J_pagecontact" data-role="page">
 		<div data-role="header">
 			<h1>联系我们</h1>
-			<a data-rel="back" data-icon="back" data-iconpos="notext"  class="ui-nodisc-icon"></a>
+			<a data-rel="back" data-icon="carat-l" data-iconpos="notext"  class="ui-nodisc-icon"></a>
 		</div>
 		<div class="ui-content ms-article">
 			<h3 class="ms-theme-title">我们的位置</h3>
@@ -320,10 +434,10 @@
 	<div id="J_pagearticle" data-role="page">
 		<div data-role="header">
 			<h1>阅读新闻</h1>
-			<a data-rel="back" data-icon="back" data-iconpos="notext"  class="ui-nodisc-icon"></a>
+			<a data-rel="back" data-icon="carat-l" data-iconpos="notext"  class="ui-nodisc-icon"></a>
 		</div>
 		<div role="main" class="ui-content ms-article">
-			<h2 class="tc ms-theme-title">智能手机正式迈入云服务时代</h2>
+			<h2 class="tc ms-theme-title">中共中央总书记习近平莅临我司视察</h2>
 			<p class="tc ms-theme-summary">
 				发布者：官方发布&nbsp;&nbsp;时间：2014-04-24
 			</p>
@@ -351,7 +465,49 @@
 				</p>
 			</div>
 		</div>
-	</div>
+	</div><!-- ./Article -->
+
+	<div id="J_pageimage" data-role="page">
+		<div data-role="header">
+			<h1>产品介绍</h1>
+			<a data-rel="back" data-icon="carat-l" data-iconpos="notext"  class="ui-nodisc-icon"></a>
+		</div>
+		<div role="main" class="ui-content ms-article">
+			<h2 class="tc ms-theme-title">苏宁易购APP客户端</h2>
+			<p class="tc ms-theme-summary">
+				发布者：官方发布&nbsp;&nbsp;时间：2014-04-24
+			</p>
+			<div class="ui-grid-b ms-gallery">
+				<div class="ui-block-a">
+					<img src="assets/imgs/product.jpg" alt="">
+				</div>
+				<div class="ui-block-b">
+					<img src="assets/imgs/product1.jpg" alt="">
+				</div>
+				<div class="ui-block-c">
+					<img src="assets/imgs/product2.jpg" alt="">
+				</div>
+				<div class="ui-block-a">
+					<img src="assets/imgs/product3.jpg" alt="">
+				</div>
+				<div class="ui-block-b">
+					<img src="assets/imgs/product2.jpg" alt="">
+				</div>
+				<div class="ui-block-c">
+					<img src="assets/imgs/product1.jpg" alt="">
+				</div>
+			</div>
+			<h3 class="ms-theme-title">案例介绍</h3>
+			<p class="ms-theme-article">
+					美家家商城隶属于佛山市木美居家具销售有限公司，是中国专业的家具网购商城。
+					我们一直以“提供优质家具，传递婚恋幸福”为导向，注重口碑营销，在“诚信负责”的经营操守之下，注重服务，不落窠臼，发展成为了家具B2C商务领域的佼佼者。美家家致力于打造中国婚恋网销家具第一平台，肩负着“让人类家居生活更美好”的使命。我们坚持“用良心，做良品，国内生产，国际品质”的原则。以敏感的时尚触觉，第一时间给消费者提供原创设计、潮流前线的品牌家具。
+			</p>
+			<h3 class="ms-theme-title">功能介绍</h3>
+			<p class="ms-theme-article">
+					形象广告页面、产品分类、搜索、优惠信息、产品促销、信息推送、团购、我的收藏、一键分享、登录注册、会员中心、购物车、在线支付等。
+			</p>
+		</div>
+	</div><!-- ./Image Gallery -->
 
 	<script src="assets/jquery-1.11.0.min.js"></script>
 	<script src="assets/jquery.mobile-1.4.2/jquery.mobile-1.4.2.min.js"></script>
