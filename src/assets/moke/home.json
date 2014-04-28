@@ -2,13 +2,20 @@
 	"r" : 1,
 	"b" : {
 		"carousel" : [
-
+			{"src" : "assets/imgs/gallery1.jpg", "alias" : "1"},
+			{"src" : "assets/imgs/gallery2.jpg", "alias" : "2"},
+			{"src" : "assets/imgs/gallery3.jpg", "alias" : "3"},
+			{"src" : "assets/imgs/gallery4.jpg", "alias" : "4"},
+			{"src" : "assets/imgs/gallery5.jpg", "alias" : "5"},
+			{"src" : "assets/imgs/gallery6.jpg", "alias" : "6"}
 		],
 		"topnews" : [
-
-		],
-		"menu" : [
-			
+			{
+				"id" : "1",
+				"title" : "中共中央总书记习近平莅临我司视察",
+				"img" : "assets/imgs/gallery3.jpg",
+				"summary" : "2014年4月27日上午，中共中央总书记国家主席中央军委主席习近平先生及夫人彭丽媛莅临我司，对我司现有生产力水平作出高度评价。"
+			}
 		]
 	}
 }

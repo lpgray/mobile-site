@@ -12,6 +12,22 @@
 </head>
 <body>
 	
+	<script id="J_tmplCarousel" type="text/x-jquery-tmpl">
+		<div class="item"><img src="${src}" alt="${alias}"></div>
+	</script>
+
+	<script id="J_tmplTopNews" type="text/x-jquery-tmpl">
+		<li>
+			<a href="#J_pagearticle?id=${id}">
+				<div class="img-wrap">
+					<img src="${img}" alt="${title}">
+				</div>
+				<h2 class="ms-theme-title">${title}</h2>
+				<p class="ms-theme-words">${summary}</p>
+			</a>
+		</li>
+	</script>
+
 	<div id="J_pagewelcome" data-role="page">
 		<div id="J_welcomecarousel" class="welcome-carousel">
 			<div class="item">
@@ -56,26 +72,13 @@
 					<h1>企业标准化APP</h1>
 				</div>
 				<div id="J_owl" class="owl-carousel owl-theme">
-					<div class="item"><img src="assets/imgs/gallery6.jpg" alt="6"></div>
-					<div class="item"><img src="assets/imgs/gallery1.jpg" alt="1"></div>
-					<div class="item"><img src="assets/imgs/gallery2.jpg" alt="2"></div>
-					<div class="item"><img src="assets/imgs/gallery3.jpg" alt="3"></div>
-					<div class="item"><img src="assets/imgs/gallery4.jpg" alt="4"></div>
-					<div class="item"><img src="assets/imgs/gallery5.jpg" alt="5"></div>
+					
 				</div><!-- ./owl-carousel -->
 				<div data-role="main">
 					<div class="ms-padding-5">
 						<div class="ms-padding-top-5">
-							<ul data-role="listview" class="ms-top-news ui-nodisc-icon ui-alt-icon">
-								<li>
-									<a href="#J_pagearticle">
-										<div class="img-wrap">
-											<img src="assets/imgs/gallery3.jpg" alt="">
-										</div>
-										<h2 class="ms-theme-title">中共中央总书记习近平莅临我司视察</h2>
-										<p class="ms-theme-words">2014年4月27日上午，中共中央总书记国家主席中央军委主席习近平先生及夫人彭丽媛莅临我司，对我司现有生产力水平作出高度评价。</p>
-									</a>
-								</li>
+							<ul id="J_pageHomeTopnews" data-role="listview" class="ms-top-news ui-nodisc-icon ui-alt-icon">
+								
 							</ul>
 						</div>
 						<div class="ms-padding-top-5">
@@ -496,8 +499,11 @@
 
 	<script src="assets/jquery-1.11.0.min.js"></script>
 	<script src="assets/jquery.mobile-1.4.2/jquery.mobile-1.4.2.min.js"></script>
-	<script src="assets/owl-carousel/owl.carousel.min.js"></script>
+	<script src="assets/owl-carousel/owl.carousel.js"></script>
+	<script src="assets/jquery.tmpl.min.js"></script>
 	<script type="text/javascript" src="http://api.map.baidu.com/api?type=quick&ak=0RoPs2PERfeEIR4pS0zKbRo4&v=1.0"></script>
+	<script src="js/ctrl.js"></script>
 	<script src="js/app.js"></script>
+
 </body>
 </html>
