@@ -1,10 +1,12 @@
 (function(global){
+	var URL_PREFIX = 'assets/moke/';
+
 	function errorHandler(data){
 
 	}
 
 	function query(url, callback){
-		$.get(url, function(data){
+		$.get(URL_PREFIX + url, function(data){
 			if(!data.r){
 				errorHandler(data);
 				return;
@@ -16,7 +18,7 @@
 
 	var PAGE_LOAD_CALLBACKS = {
 		'J_pagehome' : function(){
-			query('assets/moke/home.json', function(data){
+			query('home.json', function(data){
 				// if owl has inited then return.
 				if($('#J_owl').data('owl-init') === true){
 					return;
@@ -36,12 +38,22 @@
 				// refresh listview
 				$('#J_pageHomeTopnews').listview('refresh');
 			});
+		},
+		'J_pagearticle' : function(pageTitle){
+			query('article.json', function(data){
+				// console.info(data);
+				// fill page title
+				$('#J_articlePageTitle').html('阅读文章');
+				// fill article
+				$('#J_article').html($('#J_tmplArticle').tmpl(data.b));
+			});
 		}
 	}
 
 	var ctrl = {
 		init : function(){
 			$('body').on('pagechange', function(e, o){
+				// console.info(o);
 				PAGE_LOAD_CALLBACKS[o.toPage[0].id] && PAGE_LOAD_CALLBACKS[o.toPage[0].id].call();
 			});
 		}

@@ -34,12 +34,11 @@ Offical Mobile Site Static Pages
 - Widget: Timeline DONE
 
 ## Moke Data
-- Q:welcome
-- Q:home
-- Q:article detail
-- Q:article list
-- Q:feed list
-- Q:product list
-- Q:partner list
+- Q:home DONE
+- Q:article detail DOING
+- Q:article list DOING
+- Q:feed list DOING
+- Q:product list DOING
+- Q:partner list DOING
 - U:feed
 - Q:search

@@ -28,6 +28,16 @@
 		</li>
 	</script>
 
+	<script id="J_tmplArticle" type="text/x-jquery-tmpl">
+		<h2 class="tc ms-theme-title">${title}</h2>
+		<p class="tc ms-theme-summary">
+			发布者：${author}&nbsp;&nbsp;时间：${timestamp}
+		</p>
+		<div class="ms-article-content">
+			{{html content}}
+		</div>
+	</script>
+
 	<div id="J_pagewelcome" data-role="page">
 		<div id="J_welcomecarousel" class="welcome-carousel">
 			<div class="item">
@@ -402,57 +412,31 @@
 			<h1>联系我们</h1>
 			<a data-rel="back" data-icon="carat-l" data-iconpos="notext"  class="ui-nodisc-icon"></a>
 		</div>
-		<div class="ui-content ms-article">
-			<h3 class="ms-theme-title">我们的位置</h3>
-			<div id="J_mapctn" style="height: 15em; background-color: #ccc">
-						
+		<div role="main" class="ui-content ms-article">
+			<div class="ms-article-content">
+				<h3>我们的位置</h3>
+				<div id="J_mapctn" style="height: 15em; background-color: #ccc">
+					
+				</div>
+				<h3>联系方式</h3>
+				<p class="ms-theme-article">
+					<span class="ms-theme-color-red">联系电话:</span>18260008278
+				</p>
+				<p class="ms-theme-article">
+					<span class="ms-theme-color-red">通讯地址:</span>南京市玄武区长江后街6号东大科技园6号楼
+				</p>
 			</div>
-			<h3 class="ms-theme-title">联系方式</h3>
-			<p class="ms-theme-article">
-				<span class="ms-theme-color-red">联系电话:</span>18260008278
-			</p>
-			<p class="ms-theme-article">
-				<span class="ms-theme-color-red">通讯地址:</span>南京市玄武区长江后街6号东大科技园6号楼
-			</p>
 		</div>
 	</div><!-- ./Contact -->
 	
 	<div id="J_pagearticle" data-role="page">
 		<div data-role="header">
-			<h1>阅读新闻</h1>
+			<h1 id="J_articlePageTitle"></h1>
 			<a data-rel="back" data-icon="carat-l" data-iconpos="notext"  class="ui-nodisc-icon"></a>
 		</div>
-		<div role="main" class="ui-content ms-article">
-			<h2 class="tc ms-theme-title">中共中央总书记习近平莅临我司视察</h2>
-			<p class="tc ms-theme-summary">
-				发布者：官方发布&nbsp;&nbsp;时间：2014-04-24
-			</p>
-			<p class="ms-banner">
-				<img src="assets/imgs/gallery1.jpg" alt="">
-			</p>
-			<div class="ms-theme-article">
-				<h3 class="ms-theme-title">二级标题</h3>
-				<h4 class="ms-theme-title">三级标题</h4>
-				<p>
-					在标准的头部栏的设置下，标题文字两边各有一个可放置按钮的位置。每一个按钮通常都是都是 a 元素，但是任何有效的按钮标记的元素都可以。为了节省空间，工具栏里的按钮都是内联按钮，所以按钮的宽度只容纳icon和里面的文字。
-				</p>
-				<p>
-				头部的按钮是头部栏容器的直接子节点，默认情况下，JQuery Mobile 会自动设置第一个链接在标题的左边，第二个链接在右边。在下面这个例子中，“取消”按钮会出现在左边，“保存”按钮会出现在右边位置。
-				</p>
-				<p>
-					在标准的头部栏的设置下，标题文字两边各有一个可放置按钮的位置。每一个按钮通常都是都是 a 元素，但是任何有效的按钮标记的元素都可以。为了节省空间，工具栏里的按钮都是内联按钮，所以按钮的宽度只容纳icon和里面的文字。
-				</p>
-				<p>
-				头部的按钮是头部栏容器的直接子节点，默认情况下，JQuery Mobile 会自动设置第一个链接在标题的左边，第二个链接在右边。在下面这个例子中，“取消”按钮会出现在左边，“保存”按钮会出现在右边位置。
-				</p>
-				<p>
-					在标准的头部栏的设置下，标题文字两边各有一个可放置按钮的位置。每一个按钮通常都是都是 a 元素，但是任何有效的按钮标记的元素都可以。为了节省空间，工具栏里的按钮都是内联按钮，所以按钮的宽度只容纳icon和里面的文字。
-				</p>
-				<p>
-				头部的按钮是头部栏容器的直接子节点，默认情况下，JQuery Mobile 会自动设置第一个链接在标题的左边，第二个链接在右边。在下面这个例子中，“取消”按钮会出现在左边，“保存”按钮会出现在右边位置。
-				</p>
-			</div>
-		</div>
+		<div id="J_article" role="main" class="ui-content ms-article">
+			
+		</div><!-- ./main -->
 	</div><!-- ./Article -->
 
 	<div id="J_pageimage" data-role="page">
