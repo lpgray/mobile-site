@@ -669,6 +669,9 @@ html body .ui-group-theme-a .ms-grid a:visited{color: #666;}
 .ms-theme-title{color: #333;}
 .ms-theme-summary{color: #AAA;}
 .ms-theme-article{color: #666;}
+.ms-article h2,
+.ms-article h3,
+.ms-article h4{color: #333;}
 
 /* list */
 .ui-page-theme-a .ui-listview .ui-btn,

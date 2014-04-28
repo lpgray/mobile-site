@@ -36,7 +36,8 @@
 /* ms-article */
 .ms-article h2{margin: .5em 0; font-size: 1em;}
 .ms-article h3{font-size: .9em; font-weight: bold; margin: .6em 0;}
-.ms-article p{margin: .6em 0; font-size: .85em}
+.ms-article h4{font-size: .85em; margin: .4em 0;}
+.ms-article p{margin: .6em 0; font-size: .85em;}
 
 /* header btn */
 .ui-header .ui-btn,

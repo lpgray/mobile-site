@@ -7,7 +7,7 @@ Offical Mobile Site Static Pages
 	- 行业新闻
 - 企业概况
 	- 业务范围
-	- 历史里程(Timeline) DOING
+	- 历史里程(Timeline) DONE
 	- 企业文化
 - 合作伙伴
 - 产品天地 (Image Gallery) DONE
@@ -20,6 +20,7 @@ Offical Mobile Site Static Pages
 - 留言板 DONE
 	- 列表
 	- 反馈
+
 ## Theme
 - win8
 
@@ -30,4 +31,15 @@ Offical Mobile Site Static Pages
 - Page: Image Gallery DONE
 - Widget: Navigation DONE
 - Widget: Carousel DONE
-- Widget: Timeline DOING
+- Widget: Timeline DONE
+
+## Moke Data
+- Q:welcome
+- Q:home
+- Q:article detail
+- Q:article list
+- Q:feed list
+- Q:product list
+- Q:partner list
+- U:feed
+- Q:search
