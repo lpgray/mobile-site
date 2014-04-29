@@ -2,20 +2,14 @@
 	"r" : 1,
 	"b" : {
 		"carousel" : [
-			{"src" : "assets/imgs/gallery1.jpg", "alias" : "1"},
-			{"src" : "assets/imgs/gallery2.jpg", "alias" : "2"},
-			{"src" : "assets/imgs/gallery3.jpg", "alias" : "3"},
-			{"src" : "assets/imgs/gallery4.jpg", "alias" : "4"},
-			{"src" : "assets/imgs/gallery5.jpg", "alias" : "5"},
-			{"src" : "assets/imgs/gallery6.jpg", "alias" : "6"}
+			{"src" : "assets/imgs/fullimage1.jpg", "alias" : "1"},
+			{"src" : "assets/imgs/fullimage2.jpg", "alias" : "2"},
+			{"src" : "assets/imgs/fullimage3.jpg", "alias" : "3"},
+			{"src" : "assets/imgs/fullimage4.jpg", "alias" : "4"},
+			{"src" : "assets/imgs/fullimage5.jpg", "alias" : "5"}
 		],
 		"topnews" : [
-			{
-				"id" : "1",
-				"title" : "国务院总理李克强莅临我司视察",
-				"img" : "http://i1.sinaimg.cn/dy/c/2014-04-28/U7107P1T1D30026642F21DT20140428185620.jpg",
-				"summary" : "2014年4月27日上午，中共中央总书记国家主席中央军委主席习近平先生及夫人彭丽媛莅临我司，对我司现有生产力水平作出高度评价。"
-			}
+			{"id" : 1, "title" : "北舞校花晒生活照", "img" : "http://img01.e23.cn/2014/0423/20140423022854435.jpg", "summary" : "北舞校花美艳超Angelababy 劈腿私照曝光(组图) 近日,名叫“梦妮Gabby”的网友在微博上晒出多张生活照,相貌清纯甜美,皮肤白皙,网友惊讶地发现"}
 		]
 	}
 }

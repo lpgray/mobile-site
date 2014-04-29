@@ -640,7 +640,7 @@ button[disabled],
 	outline-style: auto;
 }
 .ui-tabs{padding:0;}
-
+.ui-fixed-hidden{position: fixed;}
 
 
 /* ----------------------------------------------------------------------------------------------------------------

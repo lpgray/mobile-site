@@ -41,19 +41,29 @@
 		},
 		'J_pagearticle' : function(pageTitle){
 			query('article.json', function(data){
-				// console.info(data);
 				// fill page title
 				$('#J_articlePageTitle').html('阅读文章');
 				// fill article
 				$('#J_article').html($('#J_tmplArticle').tmpl(data.b));
+			});
+		},
+		'J_pagenews' : function(){
+			// load enterprise news
+			query('article-list-1.json', function(data){
+				$('#J_enterpriseNews').html($('#J_tmplArticleList').tmpl(data.b));
+				$('#J_enterpriseNews').listview('refresh');
+			});
+			// load biz news
+			query('article-list-2.json', function(data){
+				$('#J_bizNews').html($('#J_tmplArticleList').tmpl(data.b));
+				$('#J_bizNews').listview('refresh');
 			});
 		}
 	}
 
 	var ctrl = {
 		init : function(){
-			$('body').on('pagechange', function(e, o){
-				// console.info(o);
+			$(window).on('pagechange', function(e, o){
 				PAGE_LOAD_CALLBACKS[o.toPage[0].id] && PAGE_LOAD_CALLBACKS[o.toPage[0].id].call();
 			});
 		}

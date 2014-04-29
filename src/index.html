@@ -38,6 +38,35 @@
 		</div>
 	</script>
 
+	<script id="J_tmplArticleList" type="text/x-jquery-tmpl">
+		<li>
+			<a href="#J_pagearticle">
+				<div class="img-wrap">
+					<img src="${img}" alt="${title}">
+				</div>
+				<h2 class="ms-theme-title">${title}</h2>
+				<p>${summary}</p>
+			</a>
+		</li>
+	</script>
+	
+	<script id="J_tmplFeedList" type="text/x-jquery-tmpl">
+		<li>
+			<time class="ui-li-aside">04-28 11:02</time>
+			<h2>张先生</h2>
+			<p>对你们的产品和业务感兴趣，也许未来会有机会合作</p>
+		</li>
+	</script>
+
+	<script id="J_tmplProductList" type="text/x-jquery-tmpl">
+		<div class="ui-block-a">
+			<a href="#J_pageimage">
+				<img src="${img}" alt="">
+				<h2>${title}</h2>
+			</a>
+		</div>
+	</script>
+
 	<div id="J_pagewelcome" data-role="page">
 		<div id="J_welcomecarousel" class="welcome-carousel">
 			<div class="item">
@@ -133,7 +162,7 @@
 					<h1>呼叫</h1>
 				</div>
 				<div class="ui-content">
-					<h2 class="tc">18260008278</h2>
+					<h2 class="tc"><a href="tel:18260008278">18260008278</a></h2>
 				</div>
 			</div><!-- ./product -->
 		</div><!-- ./tabs -->
@@ -152,83 +181,13 @@
 				</ul>
 			</div>
 			<div id="J_tabenterprice">
-				<ul data-role="listview" class="ui-nodisc-icon ui-alt-icon">
-					<li>
-						<a href="#J_pagearticle">
-							<div class="img-wrap">
-								<img src="assets/imgs/gallery1.jpg" alt="1">
-							</div>
-							<h2 class="ms-theme-title">中共中央总书记习近平莅临我司视察</h2>
-							<p>2014年4月27日上午，中共中央总书记国家主席中央军委主席习近平先生及夫人彭丽媛莅临我司，对我司现有生产力水平作出高度评价。</p>
-						</a>
-					</li>
-					<li>
-						<a href="#J_pagearticle">
-							<div class="img-wrap">
-								<img src="assets/imgs/gallery1.jpg" alt="1">
-							</div>
-							<h2 class="ms-theme-title">中共中央总书记习近平莅临我司视察</h2>
-							<p>2014年4月27日上午，中共中央总书记国家主席中央军委主席习近平先生及夫人彭丽媛莅临我司，对我司现有生产力水平作出高度评价。</p>
-						</a>
-					</li>
-					<li>
-						<a href="#J_pagearticle">
-							<div class="img-wrap">
-								<img src="assets/imgs/gallery1.jpg" alt="1">
-							</div>
-							<h2 class="ms-theme-title">中共中央总书记习近平莅临我司视察</h2>
-							<p>2014年4月27日上午，中共中央总书记国家主席中央军委主席习近平先生及夫人彭丽媛莅临我司，对我司现有生产力水平作出高度评价。</p>
-						</a>
-					</li>
-					<li>
-						<a href="#J_pagearticle">
-							<div class="img-wrap">
-								<img src="assets/imgs/gallery1.jpg" alt="1">
-							</div>
-							<h2 class="ms-theme-title">中共中央总书记习近平莅临我司视察</h2>
-							<p>2014年4月27日上午，中共中央总书记国家主席中央军委主席习近平先生及夫人彭丽媛莅临我司，对我司现有生产力水平作出高度评价。</p>
-						</a>
-					</li>
+				<ul id="J_enterpriseNews" data-role="listview" class="ui-nodisc-icon ui-alt-icon">
+					
 				</ul>
 			</div>
 			<div id="J_tabindustry">
-				<ul data-role="listview" class="ui-nodisc-icon ui-alt-icon">
-					<li>
-						<a href="#J_pagearticle">
-							<div class="img-wrap">
-								<img src="assets/imgs/gallery2.jpg" alt="1">
-							</div>
-							<h2 class="ms-theme-title">智能手机正式迈入云服务时代</h2>
-							<p>如今苹果、三星等巨头手机厂商正在大力发展自己的云服务基础设施，其手机云服务应用已基本内置自己的手机服务。</p>
-						</a>
-					</li>
-					<li>
-						<a href="#J_pagearticle">
-							<div class="img-wrap">
-								<img src="assets/imgs/gallery2.jpg" alt="1">
-							</div>
-							<h2 class="ms-theme-title">智能手机正式迈入云服务时代</h2>
-							<p>如今苹果、三星等巨头手机厂商正在大力发展自己的云服务基础设施，其手机云服务应用已基本内置自己的手机服务。</p>
-						</a>
-					</li>
-					<li>
-						<a href="#J_pagearticle">
-							<div class="img-wrap">
-								<img src="assets/imgs/gallery2.jpg" alt="1">
-							</div>
-							<h2 class="ms-theme-title">智能手机正式迈入云服务时代</h2>
-							<p>如今苹果、三星等巨头手机厂商正在大力发展自己的云服务基础设施，其手机云服务应用已基本内置自己的手机服务。</p>
-						</a>
-					</li>
-					<li>
-						<a href="#J_pagearticle">
-							<div class="img-wrap">
-								<img src="assets/imgs/gallery2.jpg" alt="1">
-							</div>
-							<h2 class="ms-theme-title">智能手机正式迈入云服务时代</h2>
-							<p>如今苹果、三星等巨头手机厂商正在大力发展自己的云服务基础设施，其手机云服务应用已基本内置自己的手机服务。</p>
-						</a>
-					</li>
+				<ul id="J_bizNews" data-role="listview" class="ui-nodisc-icon ui-alt-icon">
+					
 				</ul>
 			</div>
 		</div><!-- ./Tab Page -->
@@ -469,16 +428,18 @@
 					<img src="assets/imgs/product1.jpg" alt="">
 				</div>
 			</div>
-			<h3 class="ms-theme-title">案例介绍</h3>
-			<p class="ms-theme-article">
-					美家家商城隶属于佛山市木美居家具销售有限公司，是中国专业的家具网购商城。
-					我们一直以“提供优质家具，传递婚恋幸福”为导向，注重口碑营销，在“诚信负责”的经营操守之下，注重服务，不落窠臼，发展成为了家具B2C商务领域的佼佼者。美家家致力于打造中国婚恋网销家具第一平台，肩负着“让人类家居生活更美好”的使命。我们坚持“用良心，做良品，国内生产，国际品质”的原则。以敏感的时尚触觉，第一时间给消费者提供原创设计、潮流前线的品牌家具。
-			</p>
-			<h3 class="ms-theme-title">功能介绍</h3>
-			<p class="ms-theme-article">
-					形象广告页面、产品分类、搜索、优惠信息、产品促销、信息推送、团购、我的收藏、一键分享、登录注册、会员中心、购物车、在线支付等。
-			</p>
-		</div>
+			<div class="ms-article-content">
+				<h3>案例介绍</h3>
+				<p>
+						美家家商城隶属于佛山市木美居家具销售有限公司，是中国专业的家具网购商城。
+						我们一直以“提供优质家具，传递婚恋幸福”为导向，注重口碑营销，在“诚信负责”的经营操守之下，注重服务，不落窠臼，发展成为了家具B2C商务领域的佼佼者。美家家致力于打造中国婚恋网销家具第一平台，肩负着“让人类家居生活更美好”的使命。我们坚持“用良心，做良品，国内生产，国际品质”的原则。以敏感的时尚触觉，第一时间给消费者提供原创设计、潮流前线的品牌家具。
+				</p>
+				<h3>功能介绍</h3>
+				<p>
+						形象广告页面、产品分类、搜索、优惠信息、产品促销、信息推送、团购、我的收藏、一键分享、登录注册、会员中心、购物车、在线支付等。
+				</p>
+			</div><!-- ./ms-article-content -->
+		</div><!-- ./ms-article -->
 	</div><!-- ./Image Gallery -->
 
 	<script src="assets/jquery-1.11.0.min.js"></script>

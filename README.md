@@ -22,7 +22,7 @@ Offical Mobile Site Static Pages
 	- 反馈
 
 ## Theme
-- win8
+- win8 PENDING
 
 ## Common Module
 - Page: Home DONE
@@ -32,13 +32,25 @@ Offical Mobile Site Static Pages
 - Widget: Navigation DONE
 - Widget: Carousel DONE
 - Widget: Timeline DONE
+- Widget: Pull To Refresh
 
 ## Moke Data
 - Q:home DONE
-- Q:article detail DOING
-- Q:article list DOING
+- Q:article detail DONE
+- Q:article list DONE
 - Q:feed list DOING
 - Q:product list DOING
 - Q:partner list DOING
 - U:feed
 - Q:search
+
+## Client Requirement
+- Image Preview
+- Phone Call
+- Load More List Item
+- Disable Selection
+- Loading
+- Slide Supported Navigation
+
+## Bug List
+- #1 Search input focused will be covered by the footer. (hacked the ui-fixed-hidden class)
