@@ -39,8 +39,8 @@ Offical Mobile Site Static Pages
 - Q:article detail DONE
 - Q:article list DONE
 - Q:feed list
-- Q:product list DOING
-- Q:partner list DOING
+- Q:product list DONE
+- Q:partner list DONE
 - U:feed
 - Q:search
 

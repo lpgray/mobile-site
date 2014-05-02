@@ -720,7 +720,7 @@ html body .ui-group-theme-a .ms-grid a:visited{color: #666;}
 
 /* ms-grid */
 .ms-grid .ui-bar, .ms-grid{background-color: #fefefe; border-color: #e2e2e2;}
-.ms-grid .ui-bar:active{background-color:#eee; border-color:#D3D0D0;}
+.ms-grid .ui-bar:active{background-color:#eee;}
 .ms-grid a{text-shadow: none; font-weight: normal; color: #666;}
 .ms-grid .ui-bar{background-color: #fefefe;}
 .ms-grid .fa-icon-1{color: #FF7F08;}

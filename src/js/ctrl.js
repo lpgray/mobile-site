@@ -5,7 +5,7 @@
 
 	}
 
-	function query(url, callback){
+	function query(url, callback, params){
 		$.get(URL_PREFIX + url, function(data){
 			if(!data.r){
 				errorHandler(data);
@@ -16,25 +16,22 @@
 		}, 'json');
 	}
 
-	function getUrlParam(paramName, url) {
-		var target = url || this.location.search;
-		var paramValue = "";
-		var isFound = false;
-		if (target.indexOf("?") == 0 && target.indexOf("=") > 1) {
-			arrSource = unescape(target).substring(1, target.length).split("&");
-			i = 0;
-			while (i < arrSource.length && !isFound) {
+	function getUrlParamMap(url){
+		var target = url;
+		var back = {};
+		if (target.indexOf("?") > -1 && target.indexOf("=") > -1) {
+			var arrSource = unescape(target).substring(target.indexOf("?") + 1, target.length).split("&");
+			var i = 0;
+			while (i < arrSource.length) {
 				if (arrSource[i].indexOf("=") > 0) {
-					if (arrSource[i].split("=")[0].toLowerCase() == paramName.toLowerCase()) {
-						paramValue = arrSource[i].split("=")[1];
-						isFound = true;
-					}
+					var srcMap = arrSource[i].split('=');
+					back[srcMap[0]] = srcMap[1];
 				}
 				i++;
 			}
 		}
-		return paramValue;
-	};
+		return back;
+	}
 
 	var PAGE_LOAD_CALLBACKS = {
 		'J_pagehome' : function(){
@@ -59,13 +56,22 @@
 				$('#J_pageHomeTopnews').listview('refresh');
 			});
 		},
-		'J_pagearticle' : function(pageTitle){
+		'J_pagecontact' : function(){
+			//baidu map init
+			if($('#J_mapctn').data('bmap-inited') == 1){
+				return;
+			}
+			$('#J_mapctn').data('bmap-inited', 1);
+			var map = new BMap.Map("J_mapctn");
+			map.centerAndZoom(new BMap.Point(116.404, 39.915), 14);
+		},
+		'J_pagearticle' : function(paramMap){
 			query('article.json', function(data){
 				// fill page title
 				$('#J_articlePageTitle').html('阅读文章');
 				// fill article
 				$('#J_article').html($('#J_tmplArticle').tmpl(data.b));
-			});
+			}, paramMap);
 		},
 		'J_pagenews' : function(){
 			// load enterprise news
@@ -92,7 +98,7 @@
 				$('#J_productList').html($('#J_tmplProductList').tmpl(data.b));
 			});
 		},
-		'J_pageProductDetail' : function(){
+		'J_pageProductDetail' : function(params){
 			query('product.json', function(data){
 				for(var i = 0, l = data.b.imgs.length; i < l ; i++){
 					if((i + 1)%2 === 0){
@@ -111,15 +117,16 @@
 				$('#J_productDetailTitle').html(data.b.title);
 				$('#J_productDetailSummary').html('发布者:' + data.b.author + '  ' + '发布于:' + data.b.timestamp);
 				$('#J_productArticle').html(data.b.content);
-			});
+			}, params);
 		}
 	}
 
 	var ctrl = {
 		init : function(){
 			$(window).on('pagechange', function(e, o){
-				console.info(o);
-				PAGE_LOAD_CALLBACKS[o.toPage[0].id] && PAGE_LOAD_CALLBACKS[o.toPage[0].id].call();
+				// console.info(o);
+				var paramMap = getUrlParamMap(o.absUrl);
+				PAGE_LOAD_CALLBACKS[o.toPage[0].id] && PAGE_LOAD_CALLBACKS[o.toPage[0].id].call(o, paramMap);
 			});
 		}
 	}
