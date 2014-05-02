@@ -38,7 +38,7 @@ Offical Mobile Site Static Pages
 - Q:home DONE
 - Q:article detail DONE
 - Q:article list DONE
-- Q:feed list DOING
+- Q:feed list
 - Q:product list DOING
 - Q:partner list DOING
 - U:feed
@@ -46,11 +46,11 @@ Offical Mobile Site Static Pages
 
 ## Client Requirement
 - Image Preview
-- Phone Call
+- Phone Call DONE
 - Load More List Item
 - Disable Selection
 - Loading
-- Slide Supported Navigation
+- Swipe Supported Navigation
 
 ## Bug List
 - #1 Search input focused will be covered by the footer. (hacked the ui-fixed-hidden class)

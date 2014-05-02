@@ -1,0 +1,9 @@
+{
+	"r" : 1,
+	"b" : [
+		{"id" : 1, "name" : "苏宁易购客户端", "img" : "assets/imgs/product.jpg"},
+		{"id" : 2, "name" : "天猫客户端", "img" : "assets/imgs/product1.jpg"},
+		{"id" : 3, "name" : "新浪微博客户端", "img" : "assets/imgs/product2.jpg"},
+		{"id" : 4, "name" : "美丽说客户端", "img" : "assets/imgs/product3.jpg"}
+	]
+}

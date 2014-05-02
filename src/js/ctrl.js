@@ -16,6 +16,26 @@
 		}, 'json');
 	}
 
+	function getUrlParam(paramName, url) {
+		var target = url || this.location.search;
+		var paramValue = "";
+		var isFound = false;
+		if (target.indexOf("?") == 0 && target.indexOf("=") > 1) {
+			arrSource = unescape(target).substring(1, target.length).split("&");
+			i = 0;
+			while (i < arrSource.length && !isFound) {
+				if (arrSource[i].indexOf("=") > 0) {
+					if (arrSource[i].split("=")[0].toLowerCase() == paramName.toLowerCase()) {
+						paramValue = arrSource[i].split("=")[1];
+						isFound = true;
+					}
+				}
+				i++;
+			}
+		}
+		return paramValue;
+	};
+
 	var PAGE_LOAD_CALLBACKS = {
 		'J_pagehome' : function(){
 			query('home.json', function(data){
@@ -58,12 +78,47 @@
 				$('#J_bizNews').html($('#J_tmplArticleList').tmpl(data.b));
 				$('#J_bizNews').listview('refresh');
 			});
+		},
+		'J_pageproduct' : function(){
+			// product list
+			query('product-list.json', function(data){
+				for(var i = 0, l = data.b.length; i < l ; i++){
+					if((i + 1)%2 === 0){
+						data.b[i].sub = 'b';
+					}else{
+						data.b[i].sub = 'a';
+					}
+				}
+				$('#J_productList').html($('#J_tmplProductList').tmpl(data.b));
+			});
+		},
+		'J_pageProductDetail' : function(){
+			query('product.json', function(data){
+				for(var i = 0, l = data.b.imgs.length; i < l ; i++){
+					if((i + 1)%2 === 0){
+						data.b.imgs[i].sub = 'b';
+					}else if((i+1)%3 === 0){
+						data.b.imgs[i].sub = 'c';
+					}else{
+						data.b.imgs[i].sub = 'a';
+					}
+				}
+				// thumnails & popups
+				$('#J_productDetailList').html($('#J_tmplProductDetailList').tmpl(data.b));
+				$('#J_productPopupCtn').html($('#J_tmplProductPopupList').tmpl(data.b));
+				$('#J_productPopupCtn').children().popup();
+				// article
+				$('#J_productDetailTitle').html(data.b.title);
+				$('#J_productDetailSummary').html('发布者:' + data.b.author + '  ' + '发布于:' + data.b.timestamp);
+				$('#J_productArticle').html(data.b.content);
+			});
 		}
 	}
 
 	var ctrl = {
 		init : function(){
 			$(window).on('pagechange', function(e, o){
+				console.info(o);
 				PAGE_LOAD_CALLBACKS[o.toPage[0].id] && PAGE_LOAD_CALLBACKS[o.toPage[0].id].call();
 			});
 		}

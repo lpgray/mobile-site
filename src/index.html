@@ -11,7 +11,6 @@
 	<link rel="stylesheet" href="css/theme.css">
 </head>
 <body>
-	
 	<script id="J_tmplCarousel" type="text/x-jquery-tmpl">
 		<div class="item"><img src="${src}" alt="${alias}"></div>
 	</script>
@@ -59,12 +58,31 @@
 	</script>
 
 	<script id="J_tmplProductList" type="text/x-jquery-tmpl">
-		<div class="ui-block-a">
-			<a href="#J_pageimage">
-				<img src="${img}" alt="">
-				<h2>${title}</h2>
+		<div class="ui-block-${sub}">
+			<a href="#J_pageProductDetail?id=${id}">
+				<img src="${img}" alt="${name}">
+				<h2>${name}</h2>
 			</a>
 		</div>
+	</script>
+
+	<script id="J_tmplProductDetailList" type="text/x-jquery-tmpl">
+		{{each imgs}}
+		<div class="ui-block-${$value.sub}">
+			<a href="#J_popup${$value.id}" data-rel="popup">
+				<img src="${$value.src}" alt="${title}">
+			</a>
+		</div>
+		{{/each}}
+	</script>
+
+	<script id="J_tmplProductPopupList" type="text/x-jquery-tmpl">
+		{{each imgs}}
+		<div data-role="popup" id="J_popup${$value.id}" data-overlay-theme="b" data-theme="b" data-corners="false">
+			<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+			<img src="${$value.src}" style="max-height:512px;" alt="${title}">
+		</div>
+		{{/each}}
 	</script>
 
 	<div id="J_pagewelcome" data-role="page">
@@ -90,11 +108,6 @@
 	</div> <!--./welcome page -->
 
 	<div id="J_pagehome" data-role="page">
-		<!-- <div data-role="panel" id="J_searchpanel" data-theme="b" data-position="right">
-		    <div class="ui-content">
-		    	<input type="text" data-type="search">
-		    </div>
-		</div> /panel -->
 		<div data-role="tabs">
 			<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-corners="false">
 				<div data-role="navbar">
@@ -106,10 +119,10 @@
 					</ul>
 				</div>
 			</div>
+			<div data-role="header" data-tap-toggle="false">
+				<h1>企业标准化APP</h1>
+			</div>
 			<div id="J_home">
-				<div data-role="header">
-					<h1>企业标准化APP</h1>
-				</div>
 				<div id="J_owl" class="owl-carousel owl-theme">
 					
 				</div><!-- ./owl-carousel -->
@@ -135,9 +148,6 @@
 			</div><!-- ./tab-home -->
 			
 			<div id="J_about">
-				<div data-role="header">
-					<h1>关于我们</h1>
-				</div>
 				<div class="ms-banner">
 					<img src="assets/imgs/about.jpg" alt="关于我们">
 				</div>
@@ -149,18 +159,12 @@
 			</div><!-- ./About -->
 			
 			<div id="J_search">
-				<div data-role="header">
-					<h1>搜索</h1>
-				</div>
 				<div class="ui-content">
 					<input type="search" placeholder="搜索新闻、产品、客户等信息">
 				</div><!-- ./content -->
 			</div><!-- ./search -->
 
 			<div id="J_call">
-				<div data-role="header">
-					<h1>呼叫</h1>
-				</div>
 				<div class="ui-content">
 					<h2 class="tc"><a href="tel:18260008278">18260008278</a></h2>
 				</div>
@@ -169,7 +173,7 @@
 	</div><!-- ./Index Page -->
 	
 	<div id="J_pagenews" data-role="page">
-		<div data-role="header">
+		<div data-role="header" data-position="fixed" data-tap-toggle="false">
 			<h1>新闻中心</h1>
 			<a data-rel="back" data-icon="carat-l" data-iconpos="notext"  class="ui-nodisc-icon"></a>
 		</div>
@@ -194,7 +198,7 @@
 	</div><!-- ./News Center -->
 
 	<div id="J_pageenterprice" data-role="page">
-		<div data-role="header">
+		<div data-role="header" data-position="fixed" data-tap-toggle="false">
 			<h1>企业概况</h1>
 			<a data-rel="back" data-icon="carat-l" data-iconpos="notext"  class="ui-nodisc-icon"></a>
 		</div>
@@ -263,49 +267,49 @@
 	</div><!-- ./Enterprice Overview -->
 	
 	<div id="J_pageproduct" data-role="page">
-		<div data-role="header">
+		<div data-role="header" data-position="fixed" data-tap-toggle="false">
 			<h1>产品天地</h1>
 			<a data-rel="back" data-icon="carat-l" data-iconpos="notext"  class="ui-nodisc-icon"></a>
 		</div>
 		<div data-role="main">
-			<div class="ui-grid-a ms-gallery">
-				<div class="ui-block-a">
-					<a href="#J_pageimage">
+			<div id="J_productList" class="ui-grid-a ms-gallery">
+				<!-- <div class="ui-block-a">
+					<a href="#J_pageProductDetail">
 						<img src="assets/imgs/product.jpg" alt="">
 						<h2>苏宁易购客户端</h2>
 					</a>
 				</div>
 				<div class="ui-block-b">
-					<a href="#J_pageimage">
+					<a href="#J_pageProductDetail">
 						<img src="assets/imgs/product2.jpg" alt="">
 						<h2>渣打银行客户端</h2>
 					</a>
 				</div>
 				<div class="ui-block-a">
-					<a href="#J_pageimage">
+					<a href="#J_pageProductDetail">
 						<img src="assets/imgs/product1.jpg" alt="">
 						<h2>苏宁易购客户端</h2>
 					</a>
 				</div>
 				<div class="ui-block-b">
-					<a href="#J_pageimage">
+					<a href="#J_pageProductDetail">
 						<img src="assets/imgs/product3.jpg" alt="">
 						<h2>渣打银行客户端</h2>
 					</a>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</div><!-- ./Product Center -->
 
 	<div id="J_pagepartners" data-role="page">
-		<div data-role="header">
+		<div data-role="header" data-position="fixed" data-tap-toggle="false">
 			<h1>合作伙伴</h1>
 			<a data-rel="back" data-icon="carat-l" data-iconpos="notext"  class="ui-nodisc-icon"></a>
 		</div>
 	</div><!-- ./Partners -->
 
 	<div id="J_pageboard" data-role="page">
-		<div data-role="header">
+		<div data-role="header" data-position="fixed" data-tap-toggle="false">
 			<h1>留言板</h1>
 			<a data-rel="back" data-icon="carat-l" data-iconpos="notext"  class="ui-nodisc-icon">back</a>
 			<a href="#J_pagefeed" data-icon="comment" data-iconpos="notext" class="ui-nodisc-icon ui-btn-right">feed</a>
@@ -347,7 +351,7 @@
 	</div><!-- ./Board -->
 	
 	<div id="J_pagefeed" data-role="page">
-		<div data-role="header">
+		<div data-role="header" data-position="fixed" data-tap-toggle="false">
 			<h1>写下您的留言</h1>
 			<a data-rel="back" data-icon="carat-l" data-iconpos="notext"  class="ui-nodisc-icon"></a>
 		</div>
@@ -367,7 +371,7 @@
 	</div><!-- ./Feed -->
 
 	<div id="J_pagecontact" data-role="page">
-		<div data-role="header">
+		<div data-role="header" data-position="fixed" data-tap-toggle="false">
 			<h1>联系我们</h1>
 			<a data-rel="back" data-icon="carat-l" data-iconpos="notext"  class="ui-nodisc-icon"></a>
 		</div>
@@ -389,7 +393,7 @@
 	</div><!-- ./Contact -->
 	
 	<div id="J_pagearticle" data-role="page">
-		<div data-role="header">
+		<div data-role="header" data-position="fixed" data-tap-toggle="false">
 			<h1 id="J_articlePageTitle"></h1>
 			<a data-rel="back" data-icon="carat-l" data-iconpos="notext"  class="ui-nodisc-icon"></a>
 		</div>
@@ -398,38 +402,55 @@
 		</div><!-- ./main -->
 	</div><!-- ./Article -->
 
-	<div id="J_pageimage" data-role="page">
-		<div data-role="header">
+	<div id="J_pageProductDetail" data-role="page">
+		<div data-role="header" data-position="fixed" data-tap-toggle="false">
 			<h1>产品介绍</h1>
 			<a data-rel="back" data-icon="carat-l" data-iconpos="notext"  class="ui-nodisc-icon"></a>
 		</div>
 		<div role="main" class="ui-content ms-article">
-			<h2 class="tc ms-theme-title">苏宁易购APP客户端</h2>
-			<p class="tc ms-theme-summary">
-				发布者：官方发布&nbsp;&nbsp;时间：2014-04-24
+			<h2 id="J_productDetailTitle" class="tc ms-theme-title"></h2>
+			<p id="J_productDetailSummary" class="tc ms-theme-summary">
+				<!-- 发布者：官方发布&nbsp;&nbsp;时间：2014-04-24 -->
 			</p>
-			<div class="ui-grid-b ms-gallery">
-				<div class="ui-block-a">
-					<img src="assets/imgs/product.jpg" alt="">
+			<div id="J_productDetailList" class="ui-grid-b ms-gallery">
+				<!-- <div class="ui-block-a">
+					<a href="#J_popup1" data-rel="popup">
+					<img src="assets/imgs/product.jpg" alt=""></a>
 				</div>
 				<div class="ui-block-b">
-					<img src="assets/imgs/product1.jpg" alt="">
+					<a href="#J_popup2" data-rel="popup">
+					<img src="assets/imgs/product1.jpg" alt=""></a>
 				</div>
 				<div class="ui-block-c">
-					<img src="assets/imgs/product2.jpg" alt="">
+					<a href="#J_popup3" data-rel="popup">
+					<img src="assets/imgs/product2.jpg" alt=""></a>
 				</div>
 				<div class="ui-block-a">
-					<img src="assets/imgs/product3.jpg" alt="">
+					<a href="#J_popup1" data-rel="popup">
+					<img src="assets/imgs/product3.jpg" alt=""></a>
 				</div>
 				<div class="ui-block-b">
-					<img src="assets/imgs/product2.jpg" alt="">
+					<a href="#J_popup2" data-rel="popup">
+					<img src="assets/imgs/product2.jpg" alt=""></a>
 				</div>
 				<div class="ui-block-c">
-					<img src="assets/imgs/product1.jpg" alt="">
-				</div>
+					<a href="#J_popup3" data-rel="popup">
+					<img src="assets/imgs/product1.jpg" alt=""></a>
+				</div> -->
 			</div>
-			<div class="ms-article-content">
-				<h3>案例介绍</h3>
+			<div id="J_productPopupCtn">
+				<!-- <div data-role="popup" id="J_popup1" data-overlay-theme="b" data-theme="b" data-corners="false">
+				    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="assets/imgs/product.jpg" style="max-height:512px;" alt="Paris, France">
+				</div>
+				<div data-role="popup" id="J_popup2" data-overlay-theme="b" data-theme="b" data-corners="false">
+				    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="assets/imgs/product.jpg" style="max-height:512px;" alt="Sydney, Australia">
+				</div>
+				<div data-role="popup" id="J_popup3" data-overlay-theme="b" data-theme="b" data-corners="false">
+				    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="assets/imgs/product.jpg" style="max-height:512px;" alt="New York, USA">
+				</div> -->
+			</div>
+			<div id="J_productArticle" class="ms-article-content">
+				<!-- <h3>案例介绍</h3>
 				<p>
 						美家家商城隶属于佛山市木美居家具销售有限公司，是中国专业的家具网购商城。
 						我们一直以“提供优质家具，传递婚恋幸福”为导向，注重口碑营销，在“诚信负责”的经营操守之下，注重服务，不落窠臼，发展成为了家具B2C商务领域的佼佼者。美家家致力于打造中国婚恋网销家具第一平台，肩负着“让人类家居生活更美好”的使命。我们坚持“用良心，做良品，国内生产，国际品质”的原则。以敏感的时尚触觉，第一时间给消费者提供原创设计、潮流前线的品牌家具。
@@ -437,7 +458,7 @@
 				<h3>功能介绍</h3>
 				<p>
 						形象广告页面、产品分类、搜索、优惠信息、产品促销、信息推送、团购、我的收藏、一键分享、登录注册、会员中心、购物车、在线支付等。
-				</p>
+				</p> -->
 			</div><!-- ./ms-article-content -->
 		</div><!-- ./ms-article -->
 	</div><!-- ./Image Gallery -->
@@ -449,6 +470,5 @@
 	<script type="text/javascript" src="http://api.map.baidu.com/api?type=quick&ak=0RoPs2PERfeEIR4pS0zKbRo4&v=1.0"></script>
 	<script src="js/ctrl.js"></script>
 	<script src="js/app.js"></script>
-
 </body>
 </html>

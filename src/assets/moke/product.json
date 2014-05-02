@@ -1,0 +1,15 @@
+{
+	"r" : 1,
+	"b" : {
+		"imgs" : [
+			{"id" : 1, "src" : "assets/imgs/product.jpg"},
+			{"id" : 2, "src" : "assets/imgs/product1.jpg"},
+			{"id" : 3, "src" : "assets/imgs/product2.jpg"},
+			{"id" : 4, "src" : "assets/imgs/product3.jpg"}
+		],
+		"title" : "苏宁易购客户端",
+		"timestamp" : "2014-05-02 09:57",
+		"author" : "官方发布",
+		"content" : "<h3>案例介绍</h3><p>美家家商城隶属于佛山市木美居家具销售有限公司，是中国专业的家具网购商城。</p><h3>功能介绍</h3><p>美家家商城隶属于佛山市木美居家具销售有限公司，是中国专业的家具网购商城。</p>"
+	}
+}
