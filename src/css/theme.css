@@ -381,9 +381,11 @@ html .ui-bar-a .ui-btn:active,
 html .ui-body-a .ui-btn:active,
 html body .ui-group-theme-a .ui-btn:active,
 html head + body .ui-btn.ui-btn-a:active {
-	background-color: 		#C01111 /*{a-active-background-color}*/;
-	border-color:	 		#C42911 /*{a-active-border}*/;
-	color: 					#fff /*{a-active-color}*/;
+	background-color: #A23131 /*{a-active-background-color}*/;
+	border-color: #A02236 /*{a-active-border}*/;
+	color: #F3E5E5 /*{a-active-color}*/;
+	box-shadow: inset 0 0 6px rgba(0, 0, 0, .20);
+	text-shadow: 0 1px 0 rgba(0,0,0,.15);
 }
 /* Active button */
 .ui-page-theme-a .ui-btn.ui-btn-active,
@@ -409,9 +411,11 @@ html .ui-bar-a .ui-slider-track .ui-btn-active,
 html .ui-body-a .ui-slider-track .ui-btn-active,
 html body .ui-group-theme-a .ui-slider-track .ui-btn-active,
 html body div.ui-slider-track.ui-body-a .ui-btn-active {
-	background-color: 		#C01111 /*{a-active-background-color}*/;
-	border-color:	 		#C42911 /*{a-active-border}*/;
-	color: 					#fff /*{a-active-color}*/;
+	background-color: #A23131 /*{a-active-background-color}*/;
+	border-color: #A02236 /*{a-active-border}*/;
+	color: #F3E5E5 /*{a-active-color}*/;
+	box-shadow: inset 0 0 5px rgba(0, 0, 0, .3);
+	text-shadow: 0 1px 0 rgba(0,0,0,.15);
 }
 /* Active radio button icon */
 .ui-page-theme-a .ui-radio-on:after,

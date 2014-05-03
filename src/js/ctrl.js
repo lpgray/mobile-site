@@ -2,18 +2,49 @@
 	var URL_PREFIX = 'assets/moke/';
 
 	function errorHandler(data){
-
+		$.mobile.loading('hide');
 	}
 
 	function query(url, callback, params){
-		$.get(URL_PREFIX + url, function(data){
+		$.mobile.loading('show', {
+			text: '正在努力加载...',
+			textVisible: true,
+	        theme: 'a',
+	        textonly: false,
+		});
+
+		params && (params['_reqTime'] = new Date)
+
+		$.get(URL_PREFIX + url, params, function(data){
 			if(!data.r){
 				errorHandler(data);
 				return;
 			}
 
 			callback(data);
+			$.mobile.loading('hide');
 		}, 'json');
+	}
+
+	function insert(url, callback, params){
+		$.mobile.loading('show', {
+			text: '正在提交...',
+			textVisible: true,
+	        theme: 'a',
+	        textonly: false,
+		});
+
+		console.info(params);
+
+		$.post(URL_PREFIX + url, params, function(data){
+			if(!data.r){
+				errorHandler(data);
+				return;
+			}
+			
+			callback(data);
+			$.mobile.loading('hide');
+		});
 	}
 
 	function getUrlParamMap(url){
@@ -31,6 +62,31 @@
 			}
 		}
 		return back;
+	}
+
+	var validation = {
+		username : function(val){
+			if($.trim(val)){
+				return {r : 1};
+			}else{
+				return {r : 0, m : '请输入您的昵称'};
+			}
+		},
+		content : function(val){
+			if($.trim(val)){
+				return {r : 1};
+			}else{
+				return {r : 0, m : '请输入评论内容'};
+			}
+		},
+		phone : function(val){
+			var regexp = /^((\d{11})|^((\d{7,8})|(\d{4}|\d{3})-(\d{7,8})|(\d{4}|\d{3})-(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1})|(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1}))$)$/;
+			if(regexp.test(val)){
+				return {r : 1};
+			}else{
+				return {r : 0, m : '手机号格式输入错误'};
+			}
+		}
 	}
 
 	var PAGE_LOAD_CALLBACKS = {
@@ -118,6 +174,69 @@
 				$('#J_productDetailSummary').html('发布者:' + data.b.author + '  ' + '发布于:' + data.b.timestamp);
 				$('#J_productArticle').html(data.b.content);
 			}, params);
+		},
+		'J_pageboard' : function(params){
+			query('feed-list.json', function(data){
+				$('#J_feedList').html($('#J_tmplFeedList').tmpl(data.b));
+				$('#J_feedList').listview('refresh');
+			}, params);
+		},
+		'J_pagefeed' : function(){
+			// clear form
+			var $form = $('#J_feedForm');
+			$form.find('textarea').val('');
+			// form validate & errorTip
+			var $username = $form.find('input[name=user]');
+			var $phone = $form.find('input[name=phone]');
+			var $genderWrap = $form.find('div[name=gender]');
+			var $content = $form.find('textarea[name=content]');
+			
+			var inputs = [];
+			inputs[0] = $username;
+			inputs[1] = $phone;
+			inputs[2] = $content;
+
+			function validate(){
+				for (var i = 0; i < 3; i++) {
+					var $self = inputs[i];
+					var result = validation[$self.data('validate')].call($self, $self.val());
+					if (!result.r) {
+						alert(result.m);
+						return false;
+					}
+				}
+				return true;
+			}
+
+			// bind submit
+			var $trigger = $('#J_btnPostFeed');
+			if($trigger.data('submitBinded')){
+				return;
+			}
+
+			
+
+			$trigger.data('submitBinded', 1);
+			$trigger.click(function(){
+				if(!validate()){
+					return;
+				}
+
+				// make params
+				var params = {
+					username : $username.val(),
+					phone : $phone.val(),
+					content : $content.val()
+				}
+
+				insert('feed-insert.json', function(data){
+					// success
+					PAGE_LOAD_CALLBACKS['J_pageboard'].call(window, {d : new Date});
+					// go back to the previous page
+					history.back();
+					// save username gender phoneNumber to the localstorage
+				}, params);
+			});
 		}
 	}
 

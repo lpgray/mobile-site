@@ -36,7 +36,6 @@
 			{{html content}}
 		</div>
 	</script>
-
 	<script id="J_tmplArticleList" type="text/x-jquery-tmpl">
 		<li>
 			<a href="#J_pagearticle?id=${id}">
@@ -48,14 +47,6 @@
 			</a>
 		</li>
 	</script>
-	
-	<script id="J_tmplFeedList" type="text/x-jquery-tmpl">
-		<li>
-			<time class="ui-li-aside">04-28 11:02</time>
-			<h2>张先生</h2>
-			<p>对你们的产品和业务感兴趣，也许未来会有机会合作</p>
-		</li>
-	</script>
 
 	<script id="J_tmplProductList" type="text/x-jquery-tmpl">
 		<div class="ui-block-${sub}">
@@ -65,7 +56,6 @@
 			</a>
 		</div>
 	</script>
-
 	<script id="J_tmplProductDetailList" type="text/x-jquery-tmpl">
 		{{each imgs}}
 		<div class="ui-block-${$value.sub}">
@@ -75,7 +65,6 @@
 		</div>
 		{{/each}}
 	</script>
-
 	<script id="J_tmplProductPopupList" type="text/x-jquery-tmpl">
 		{{each imgs}}
 		<div data-role="popup" id="J_popup${$value.id}" data-overlay-theme="b" data-theme="b" data-corners="false">
@@ -83,6 +72,14 @@
 			<img src="${$value.src}" style="max-height:512px;" alt="${title}">
 		</div>
 		{{/each}}
+	</script>
+
+	<script id="J_tmplFeedList" type="text/x-jquery-tmpl">
+		<li>
+			<time class="ui-li-aside">${timestamp}</time>
+			<h2>${name}</h2>
+			<p>${content}</p>
+		</li>
 	</script>
 
 	<div id="J_pagewelcome" data-role="page">
@@ -292,37 +289,8 @@
 			<a href="#J_pagefeed" data-icon="comment" data-iconpos="notext" class="ui-nodisc-icon ui-btn-right">feed</a>
 		</div>
 		<div data-role="main">
-			<ul data-role="listview" class="ms-feed-list">
-				<li>
-					<time class="ui-li-aside">04-28 11:02</time>
-					<h2>张先生</h2>
-					<p>对你们的产品和业务感兴趣，也许未来会有机会合作</p>
-				</li>
-				<li>
-					<time class="ui-li-aside">04-28 11:02</time>
-					<h2>张先生</h2>
-					<p>对你们的产品和业务感兴趣，也许未来会有机会合作也许未来会有机会合作</p>
-				</li>
-				<li>
-					<time class="ui-li-aside">04-28 11:02</time>
-					<h2>张先生</h2>
-					<p>对你们的产品和业务感兴趣，也许未来会有机会合作对你们的产品和业务感兴趣，也许未来会有机会合作</p>
-				</li>
-				<li>
-					<time class="ui-li-aside">04-28 11:02</time>
-					<h2>张先生</h2>
-					<p>对你们的产品和业务感兴趣，也许未来会有机会合作</p>
-				</li>
-				<li>
-					<time class="ui-li-aside">04-28 11:02</time>
-					<h2>张先生</h2>
-					<p>对你们的产品和业务感兴趣，也许未来会有机会合作</p>
-				</li>
-				<li>
-					<time class="ui-li-aside">04-28 11:02</time>
-					<h2>张先生</h2>
-					<p>对你们的产品和业务感兴趣，也许未来会有机会合作，对你们的产品和业务感兴趣，也许未来会有机会合作对你们的产品和业务感兴趣，也许未来会有机会合作</p>
-				</li>
+			<ul id="J_feedList" data-role="listview" class="ms-feed-list">
+				
 			</ul>
 		</div>
 	</div><!-- ./Board -->
@@ -332,14 +300,20 @@
 			<h1>写下您的留言</h1>
 			<a data-rel="back" data-icon="carat-l" data-iconpos="notext"  class="ui-nodisc-icon"></a>
 		</div>
-		<div class="ui-content">
-			<input type="text" placeholder="您的称呼" data-clear-btn="true">
-			<input type="tel" placeholder="您的手机号" data-clear-btn="true">
-			<textarea style="height: 100px" placeholder="写下您的评论"></textarea>
+		<div id="J_feedForm" class="ui-content">
+			<input type="text" placeholder="您的称呼" name="user" data-clear-btn="true" data-validate="username">
+			<div name="gender" data-role="controlgroup" data-type="horizontal">
+				<input type="radio" name="radio-choice-h-2" id="radio-choice-h-2a" value="1" checked="checked">
+		        <label for="radio-choice-h-2a">先生</label>
+		        <input type="radio" name="radio-choice-h-2" id="radio-choice-h-2b" value="0">
+		        <label for="radio-choice-h-2b">女士</label>
+	        </div>
+			<input type="tel" name="phone" placeholder="您的手机号" data-validate="phone" data-clear-btn="true">
+			<textarea style="height: 100px" name="content" placeholder="写下您的留言..." data-validate="content"></textarea>
 		</div>
 		<div class="ui-grid-a">
 			<div class="ui-block-a">
-				<a href="#" class="ui-btn ui-corner-all ui-shadow">确认留言</a>
+				<a id="J_btnPostFeed" href="#" class="ui-btn ui-corner-all ui-shadow">确认留言</a>
 			</div>
 			<div class="ui-block-b">
 				<a data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-b">取消</a>

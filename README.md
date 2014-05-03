@@ -38,14 +38,14 @@ Offical Mobile Site Static Pages
 - Q:home DONE
 - Q:article detail DONE
 - Q:article list DONE
-- Q:feed list
 - Q:product list DONE
 - Q:partner list DONE
-- U:feed
+- Q:feed list DONE
+- U:feed DOING
 - Q:search
 
 ## Client Requirement
-- Image Preview
+- Image Preview DONE
 - Phone Call DONE
 - Load More List Item
 - Disable Selection
