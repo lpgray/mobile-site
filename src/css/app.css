@@ -41,32 +41,32 @@
 .ms-article img{max-width: 100%; margin: 0 auto}
 
 /* header btn */
-.ui-header .ui-btn,
-.ui-header .ui-btn:hover,
-.ui-header .ui-btn:visited{
+.ui-header > .ui-btn,
+.ui-header > .ui-btn:hover,
+.ui-header > .ui-btn:visited{
 	border-radius: 0;
-	height: 100%;
+	height: 42px;
 	top: 0;
 	width: 2.8em;
 	box-shadow: none;
 }
-.ui-header .ui-btn:after{background-size: 20px; width: 2.8em; height: 100%; margin-top: -21px; margin-left: -23px; border-radius: 0;}
-.ui-header .ui-btn-left,
-.ui-header .ui-btn-left:visited,
-.ui-header .ui-btn-left:hover{
+.ui-header > .ui-btn:after{background-size: 20px; width: 2.8em; height: 100%; margin-top: -21px; margin-left: -23px; border-radius: 0;}
+.ui-header > .ui-btn-left,
+.ui-header > .ui-btn-left:visited,
+.ui-header > .ui-btn-left:hover{
 	border: 0;
 	border-right: 1px solid #BE2121;
 	left: 0;
 }
-.ui-header .ui-btn-right,
-.ui-header .ui-btn-right:visited,
-.ui-header .ui-btn-right:hover{
+.ui-header > .ui-btn-right,
+.ui-header > .ui-btn-right:visited,
+.ui-header > .ui-btn-right:hover{
 	border: 0;
 	border-left: 1px solid #BE2121;
 	right: 0;
 }
-.ui-header .ui-btn-left:after{border-right: 1px solid #000;}
-.ui-header .ui-btn-right:after{border-left: 1px solid #000;}
+.ui-header > .ui-btn-left:after{border-right: 1px solid #000;}
+.ui-header > .ui-btn-right:after{border-left: 1px solid #000;}
 
 /* ui-navbar */
 .ui-tabs .ui-footer .ui-navbar .ui-btn,

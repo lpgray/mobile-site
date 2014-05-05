@@ -82,6 +82,13 @@
 		</li>
 	</script>
 
+	<script id="J_tmplPartnersList" type="text/x-jquery-tmpl">
+		<div class="ui-block-${sub}">
+			<img src="${img}" alt="${name}">
+			<h2>${name}</h2>
+		</div>
+	</script>
+
 	<div id="J_pagewelcome" data-role="page">
 		<div id="J_welcomecarousel" class="welcome-carousel">
 			<div class="item">
@@ -106,6 +113,9 @@
 
 	<div id="J_pagehome" data-role="page">
 		<div data-role="tabs">
+			<div data-role="header" data-tap-toggle="false">
+				<h1 id="J_pageHomeTitle"><i>RayDesign</i></h1>
+			</div>
 			<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-corners="false">
 				<div data-role="navbar">
 					<ul>
@@ -115,9 +125,6 @@
 						<li><a href="#J_call" class="ui-nodisc-icon ui-icon-phone ui-btn-icon-top">一键呼叫</a></li>
 					</ul>
 				</div>
-			</div>
-			<div data-role="header" data-tap-toggle="false">
-				<h1 id="J_pageHomeTitle">企业标准化APP</h1>
 			</div>
 			<div id="J_home">
 				<div id="J_owl" class="owl-carousel owl-theme">
@@ -149,8 +156,8 @@
 					<img src="assets/imgs/about.jpg" alt="关于我们">
 				</div>
 				<div class="ui-content ms-article">
-					<h3 class="ms-theme-title">公司前身</h3>
-					<p class="ms-theme-article">新华网是党中央直接部署，国家通讯社新华社主办的中央重点新闻网站，以“传播中国、报道世界”为职责，以“权威声音、亲切表达”为理念，通过中（简、繁体）、英、法、西、俄、阿、日、藏、维等多种语言，24小时不间断发布全球新闻，是名副其实的“网上新闻信息总汇”。
+					<h3>公司前身</h3>
+					<p>新华网是党中央直接部署，国家通讯社新华社主办的中央重点新闻网站，以“传播中国、报道世界”为职责，以“权威声音、亲切表达”为理念，通过中（简、繁体）、英、法、西、俄、阿、日、藏、维等多种语言，24小时不间断发布全球新闻，是名副其实的“网上新闻信息总汇”。
 					依托新华社31个国内分社、180余个境外分支机构以及自有采编队伍，新华网形成了全球化新闻信息采集网络，是中国网络媒体中传播力强、覆盖面广、资讯采集手段全、传播形态多样化的全媒体信息采编发平台。</p>
 				</div><!-- ./content -->
 			</div><!-- ./About -->
@@ -170,16 +177,16 @@
 	</div><!-- ./Index Page -->
 	
 	<div id="J_pagenews" data-role="page">
-		<div data-role="header" data-position="fixed" data-tap-toggle="false">
-			<h1>新闻中心</h1>
-			<a data-rel="back" data-icon="carat-l" data-iconpos="notext"  class="ui-nodisc-icon"></a>
-		</div>
 		<div data-role="tabs">
-			<div data-role="navbar">
-				<ul>
-					<li><a href="#J_tabenterprice" class="ui-btn-active">企业新闻</a></li>
-					<li><a href="#J_tabindustry">行业新闻</a></li>
-				</ul>
+			<div data-role="header" data-position="fixed" data-tap-toggle="false">
+				<h1>新闻中心</h1>
+				<a data-rel="back" data-icon="carat-l" data-iconpos="notext"  class="ui-nodisc-icon"></a>
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#J_tabenterprice" class="ui-btn-active">企业新闻</a></li>
+						<li><a href="#J_tabindustry">行业新闻</a></li>
+					</ul>
+				</div>
 			</div>
 			<div id="J_tabenterprice">
 				<ul id="J_enterpriseNews" data-role="listview" class="ui-nodisc-icon ui-alt-icon">
@@ -195,70 +202,29 @@
 	</div><!-- ./News Center -->
 
 	<div id="J_pageenterprice" data-role="page">
-		<div data-role="header" data-position="fixed" data-tap-toggle="false">
-			<h1>企业概况</h1>
-			<a data-rel="back" data-icon="carat-l" data-iconpos="notext"  class="ui-nodisc-icon"></a>
-		</div>
 		<div data-role="tabs">
-			<div data-role="navbar">
-				<ul>
-					<li><a href="#J_timeline">历史里程</a></li>
-					<li><a href="#J_biz">业务范围</a></li>
-					<li><a href="#J_art">企业文化</a></li>
-				</ul>
-			</div>
-			<div id="J_timeline">
-				<h2 class="tc">时间线</h2>
-				<div class="ms-timeline clearfix">
-					<div class="spine"></div>
-					<div class="separator">
-						<div class="separator-inner">
-							<p>1998</p>
-						</div>
-					</div>
-					<div class="column column-left">
-						<div class="column-inner">
-							<p><span class="ms-theme-color-red">1998年1月</span>公司成立</p>
-						</div>
-					</div>
-					<div class="separator">
-						<div class="separator-inner">
-							<p>2011</p>
-						</div>
-					</div>
-					<div class="column column-right">
-						<div class="column-inner">
-							<p><span class="ms-theme-color-red">2011年2月</span>Facebook决定将它添加到他们的网站设计上</p>
-						</div>
-					</div>
-					<div class="column column-left">
-						<div class="column-inner">
-							<p><span class="ms-theme-color-red">2011年1月</span>Facebook决定将它添加到他们的网站设计上</p>
-							<a href="#"><img src="assets/imgs/gallery4.jpg" alt=""></a>
-						</div>
-					</div>
-					<div class="separator">
-						<div class="separator-inner">
-							<p>2012</p>
-						</div>
-					</div>
-					<div class="column column-left">
-						<div class="column-inner">
-							<p><span class="ms-theme-color-red">2012年11月</span>我们收集了一些jQuery timeline 插件，您可以选择您喜欢的添加到您的网站中</p>
-						</div>
-					</div>
-					<div class="column column-right">
-						<div class="column-inner">
-							<p><span class="ms-theme-color-red">2012年12月</span>选择一个插件添加到您的网页，来增强您的网站的互动性</p>
-						</div>
-					</div>
+			<div data-role="header" data-position="fixed" data-tap-toggle="false" style="overflow:hidden">
+				<h1>企业概况</h1>
+				<a data-rel="back" data-icon="carat-l" data-iconpos="notext" class="ui-nodisc-icon"></a>
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#J_timeline">历史历程</a></li>
+						<li><a href="#J_biz">业务范围</a></li>
+						<li><a href="#J_art">企业文化</a></li>
+					</ul>
 				</div>
 			</div>
-			<div id="J_biz">
-				<h2 class="tc">业务范围</h2>
+			<div id="J_timeline" class="ui-content">
+				<br>
+				<div id="J_enterpriseTimeline" class="ms-timeline clearfix">
+					
+				</div>
 			</div>
-			<div id="J_art">
-				<h2 class="tc">企业文化</h2>
+			<div id="J_biz" class="ms-article ui-content">
+				
+			</div>
+			<div id="J_art" class="ms-article ui-content">
+				
 			</div>
 		</div>
 	</div><!-- ./Enterprice Overview -->
@@ -279,6 +245,11 @@
 		<div data-role="header" data-position="fixed" data-tap-toggle="false">
 			<h1>合作伙伴</h1>
 			<a data-rel="back" data-icon="carat-l" data-iconpos="notext"  class="ui-nodisc-icon"></a>
+		</div>
+		<div data-role="main">
+			<div id="J_partnersList" class="ui-grid-a ms-gallery ms-gallery-noboard">
+				
+			</div>
 		</div>
 	</div><!-- ./Partners -->
 
@@ -301,15 +272,17 @@
 			<a data-rel="back" data-icon="carat-l" data-iconpos="notext"  class="ui-nodisc-icon"></a>
 		</div>
 		<div id="J_feedForm" class="ui-content">
-			<input type="text" placeholder="您的称呼" name="user" data-clear-btn="true" data-validate="username">
+			<input type="text" placeholder="您的称呼" name="user" data-clear-btn="true" data-validate="username" value="张">
 			<div name="gender" data-role="controlgroup" data-type="horizontal">
 				<input type="radio" name="radio-choice-h-2" id="radio-choice-h-2a" value="1" checked="checked">
 		        <label for="radio-choice-h-2a">先生</label>
 		        <input type="radio" name="radio-choice-h-2" id="radio-choice-h-2b" value="0">
 		        <label for="radio-choice-h-2b">女士</label>
 	        </div>
-			<input type="tel" name="phone" placeholder="您的手机号" data-validate="phone" data-clear-btn="true">
-			<textarea style="height: 100px" name="content" placeholder="写下您的留言..." data-validate="content"></textarea>
+			<input type="tel" name="phone" placeholder="您的手机号" data-validate="phone" data-clear-btn="true" value="18260008278">
+			<textarea style="height: 100px" name="content" placeholder="写下您的留言..." data-validate="content">
+				产品不错...
+			</textarea>
 		</div>
 		<div class="ui-grid-a">
 			<div class="ui-block-a">
@@ -327,19 +300,17 @@
 			<a data-rel="back" data-icon="carat-l" data-iconpos="notext"  class="ui-nodisc-icon"></a>
 		</div>
 		<div role="main" class="ui-content ms-article">
-			<div class="ms-article-content">
-				<h3>我们的位置</h3>
-				<div id="J_mapctn" style="height: 15em; background-color: #ccc">
-					
-				</div>
-				<h3>联系方式</h3>
-				<p class="ms-theme-article">
-					<span class="ms-theme-color-red">联系电话:</span>18260008278
-				</p>
-				<p class="ms-theme-article">
-					<span class="ms-theme-color-red">通讯地址:</span>南京市玄武区长江后街6号东大科技园6号楼
-				</p>
+			<h3>我们的位置</h3>
+			<div id="J_mapctn" style="height: 15em; background-color: #ccc">
+				
 			</div>
+			<h3>联系方式</h3>
+			<p class="ms-theme-article">
+				<span class="ms-theme-color-red">联系电话:</span>18260008278
+			</p>
+			<p class="ms-theme-article">
+				<span class="ms-theme-color-red">通讯地址:</span>南京市玄武区长江后街6号东大科技园6号楼
+			</p>
 		</div>
 	</div><!-- ./Contact -->
 	
@@ -348,7 +319,7 @@
 			<h1 id="J_articlePageTitle"></h1>
 			<a data-rel="back" data-icon="carat-l" data-iconpos="notext"  class="ui-nodisc-icon"></a>
 		</div>
-		<div id="J_article" role="main" class="ui-content ms-article">
+		<div id="J_article" class="ui-content ms-article">
 			
 		</div><!-- ./main -->
 	</div><!-- ./Article -->

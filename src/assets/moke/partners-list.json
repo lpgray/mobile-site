@@ -1,0 +1,12 @@
+{
+	"r" : 1,
+	"b" : [
+		{ "id" : 1, "name" : "音乐雨露", "img" : "assets/imgs/logo1.jpg" },
+		{ "id" : 1, "name" : "卫岗乳液", "img" : "assets/imgs/logo2.png" },
+		{ "id" : 1, "name" : "绿地股份", "img" : "assets/imgs/logo3.jpg" },
+		{ "id" : 1, "name" : "宏宝莱", "img" : "assets/imgs/logo4.png" },
+		{ "id" : 1, "name" : "Ctrix", "img" : "assets/imgs/logo7.jpg" },
+		{ "id" : 1, "name" : "顽皮猴", "img" : "assets/imgs/logo8.png" },
+		{ "id" : 1, "name" : "音乐天堂", "img" : "assets/imgs/logo9.jpg" }
+	]
+}

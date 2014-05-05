@@ -32,7 +32,6 @@ Offical Mobile Site Static Pages
 - Widget: Navigation DONE
 - Widget: Carousel DONE
 - Widget: Timeline DONE
-- Widget: Pull To Refresh
 
 ## Moke Data
 - Q:home DONE
@@ -41,16 +40,17 @@ Offical Mobile Site Static Pages
 - Q:product list DONE
 - Q:partner list DONE
 - Q:feed list DONE
-- U:feed DOING
+- U:feed DONE
 - Q:search
 
 ## Client Requirement
 - Image Preview DONE
 - Phone Call DONE
+- Loading DONE
 - Load More List Item
-- Disable Selection
-- Loading
+- Share widget (some one doing)
 - Swipe Supported Navigation
+- Disable Selection (PENDING)
 
 ## Bug List
 - #1 Search input focused will be covered by the footer. (hacked the ui-fixed-hidden class)

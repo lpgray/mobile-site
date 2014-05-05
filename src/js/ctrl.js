@@ -34,8 +34,6 @@
 	        textonly: false,
 		});
 
-		console.info(params);
-
 		$.post(URL_PREFIX + url, params, function(data){
 			if(!data.r){
 				errorHandler(data);
@@ -44,7 +42,7 @@
 			
 			callback(data);
 			$.mobile.loading('hide');
-		});
+		}, 'json');
 	}
 
 	function getUrlParamMap(url){
@@ -214,8 +212,6 @@
 				return;
 			}
 
-			
-
 			$trigger.data('submitBinded', 1);
 			$trigger.click(function(){
 				if(!validate()){
@@ -230,12 +226,66 @@
 				}
 
 				insert('feed-insert.json', function(data){
-					// success
-					PAGE_LOAD_CALLBACKS['J_pageboard'].call(window, {d : new Date});
 					// go back to the previous page
 					history.back();
 					// save username gender phoneNumber to the localstorage
 				}, params);
+			});
+		},
+		'J_pagepartners' : function(){
+			query('partners-list.json', function(data){
+				for(var i = 0, l = data.b.length; i < l ; i++){
+					if((i + 1)%2 === 0){
+						data.b[i].sub = 'b';
+					}else{
+						data.b[i].sub = 'a';
+					}
+				}
+				$('#J_partnersList').html($('#J_tmplPartnersList').tmpl(data.b));
+			});
+		},
+		'J_pageenterprice' : function(){
+			// query timeline
+			query('enterprise-timeline.json', function(data){
+				var tmpl = '<div class="spine"></div>';
+
+				for(var year in data.b){
+					tmpl += '<div class="separator">';
+					tmpl += '	<div class="separator-inner">';
+					tmpl += '		<p>'+ year +'</p>';
+					tmpl += '	</div>';
+					tmpl += '</div>';
+					
+					for(var i = 0, l = data.b[year].length; i < l ; i++){
+						var item = data.b[year][i];
+						
+						if(i % 2 === 0){
+							var klass = 'column-left';
+						}else{
+							var klass = 'column-right';
+						}
+						
+						tmpl += '<div class="column '+klass+'">';
+						tmpl += '	<div class="column-inner">';
+						if(item.time){
+							tmpl += '	<time class="ms-theme-color-red">'+item.time+'</time>';
+						}
+						tmpl += item.content;
+						tmpl += '	</div>';
+						tmpl += '</div>';
+					}
+				}
+
+				$('#J_enterpriseTimeline').html(tmpl);
+			});
+			// query article1
+			query('enterprise-biz.json', function(data){
+				$('#J_biz').html(data.b.content);
+			});
+
+			// query article2
+			query('enterprise-art.json', function(data){
+				$('#J_art').html(data.b.content);
 			});
 		}
 	}
