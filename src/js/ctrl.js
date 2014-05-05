@@ -15,7 +15,7 @@
 
 		params && (params['_reqTime'] = new Date)
 
-		$.get(URL_PREFIX + url, params, function(data){
+		$.get(URL_PREFIX + url + '?d=' + new Date, params, function(data){
 			if(!data.r){
 				errorHandler(data);
 				return;
