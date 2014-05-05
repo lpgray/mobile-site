@@ -130,14 +130,15 @@
 		'J_pagenews' : function(){
 			// load enterprise news
 			query('article-list-1.json', function(data){
-				$('#J_enterpriseNews').html($('#J_tmplArticleList').tmpl(data.b));
+				$('#J_enterpriseNews').html($('#J_tmplArticleList').tmpl(data.b.list));
 				$('#J_enterpriseNews').listview('refresh');
-			});
+			}, {type : 1});
+
 			// load biz news
 			query('article-list-2.json', function(data){
-				$('#J_bizNews').html($('#J_tmplArticleList').tmpl(data.b));
+				$('#J_bizNews').html($('#J_tmplArticleList').tmpl(data.b.list));
 				$('#J_bizNews').listview('refresh');
-			});
+			}, {type : 2});
 		},
 		'J_pageproduct' : function(){
 			// product list
@@ -281,12 +282,12 @@
 			// query article1
 			query('enterprise-biz.json', function(data){
 				$('#J_biz').html(data.b.content);
-			});
+			}, {id : 'enterprisebiz'});
 
 			// query article2
 			query('enterprise-art.json', function(data){
 				$('#J_art').html(data.b.content);
-			});
+			}, {id : 'enterpriseart'});
 		}
 	}
 

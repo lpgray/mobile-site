@@ -22,7 +22,7 @@
 					<img src="${img}" alt="${title}">
 				</div>
 				<h2 class="ms-theme-title">${title}</h2>
-				<p class="ms-theme-words">${summary}</p>
+				<p class="ms-theme-article">${summary}</p>
 			</a>
 		</li>
 	</script>
@@ -111,7 +111,7 @@
 		</div>
 	</div> <!--./welcome page -->
 
-	<div id="J_pagehome" data-role="page">
+	<div id="J_pagehome" data-role="page" data-theme="b">
 		<div data-role="tabs">
 			<div data-role="header" data-tap-toggle="false">
 				<h1 id="J_pageHomeTitle"><i>RayDesign</i></h1>
@@ -164,7 +164,7 @@
 			
 			<div id="J_search">
 				<div data-role="main" class="ui-content">
-					<ul id="J_searchAutoListView" data-role="listview" data-inset="true" data-filter-placeholder="模拟自动完成，搜索城市，如: Beijing" data-filter="true" data-filter-theme="a"></ul>
+					<ul id="J_searchAutoListView" data-role="listview" data-inset="true" data-filter-placeholder="模拟自动完成，搜索城市，如: Beijing" data-filter="true"></ul>
 				</div><!-- ./content -->
 			</div><!-- ./search -->
 
@@ -176,11 +176,11 @@
 		</div><!-- ./tabs -->
 	</div><!-- ./Index Page -->
 	
-	<div id="J_pagenews" data-role="page">
+	<div id="J_pagenews" data-role="page" data-theme="b">
 		<div data-role="tabs">
 			<div data-role="header" data-position="fixed" data-tap-toggle="false">
 				<h1>新闻中心</h1>
-				<a data-rel="back" data-icon="carat-l" data-iconpos="notext"  class="ui-nodisc-icon"></a>
+				<a data-rel="back" class="ui-btn ui-nodisc-icon ui-icon-carat-l ui-btn-icon-notext"></a>
 				<div data-role="navbar">
 					<ul>
 						<li><a href="#J_tabenterprice" class="ui-btn-active">企业新闻</a></li>
@@ -201,11 +201,11 @@
 		</div><!-- ./Tab Page -->
 	</div><!-- ./News Center -->
 
-	<div id="J_pageenterprice" data-role="page">
+	<div id="J_pageenterprice" data-role="page" data-theme="b">
 		<div data-role="tabs">
 			<div data-role="header" data-position="fixed" data-tap-toggle="false" style="overflow:hidden">
 				<h1>企业概况</h1>
-				<a data-rel="back" data-icon="carat-l" data-iconpos="notext" class="ui-nodisc-icon"></a>
+				<a data-rel="back" class="ui-btn ui-nodisc-icon ui-icon-carat-l ui-btn-icon-notext"></a>
 				<div data-role="navbar">
 					<ul>
 						<li><a href="#J_timeline">历史历程</a></li>
@@ -229,10 +229,10 @@
 		</div>
 	</div><!-- ./Enterprice Overview -->
 	
-	<div id="J_pageproduct" data-role="page">
+	<div id="J_pageproduct" data-role="page" data-theme="b">
 		<div data-role="header" data-position="fixed" data-tap-toggle="false">
 			<h1>产品天地</h1>
-			<a data-rel="back" data-icon="carat-l" data-iconpos="notext"  class="ui-nodisc-icon"></a>
+			<a data-rel="back" class="ui-btn ui-nodisc-icon ui-icon-carat-l ui-btn-icon-notext"></a>
 		</div>
 		<div data-role="main">
 			<div id="J_productList" class="ui-grid-a ms-gallery">
@@ -241,10 +241,10 @@
 		</div>
 	</div><!-- ./Product Center -->
 
-	<div id="J_pagepartners" data-role="page">
+	<div id="J_pagepartners" data-role="page" data-theme="b">
 		<div data-role="header" data-position="fixed" data-tap-toggle="false">
 			<h1>合作伙伴</h1>
-			<a data-rel="back" data-icon="carat-l" data-iconpos="notext"  class="ui-nodisc-icon"></a>
+			<a data-rel="back" class="ui-btn ui-nodisc-icon ui-icon-carat-l ui-btn-icon-notext"></a>
 		</div>
 		<div data-role="main">
 			<div id="J_partnersList" class="ui-grid-a ms-gallery ms-gallery-noboard">
@@ -253,11 +253,11 @@
 		</div>
 	</div><!-- ./Partners -->
 
-	<div id="J_pageboard" data-role="page">
+	<div id="J_pageboard" data-role="page" data-theme="b">
 		<div data-role="header" data-position="fixed" data-tap-toggle="false">
 			<h1>留言板</h1>
-			<a data-rel="back" data-icon="carat-l" data-iconpos="notext"  class="ui-nodisc-icon">back</a>
-			<a href="#J_pagefeed" data-icon="comment" data-iconpos="notext" class="ui-nodisc-icon ui-btn-right">feed</a>
+			<a data-rel="back" class="ui-btn ui-nodisc-icon ui-icon-carat-l ui-btn-icon-notext"></a>
+			<a href="#J_pagefeed" class="ui-btn ui-nodisc-icon ui-icon-comment ui-btn-icon-notext ui-btn-right"></a>
 		</div>
 		<div data-role="main">
 			<ul id="J_feedList" data-role="listview" class="ms-feed-list">
@@ -266,10 +266,10 @@
 		</div>
 	</div><!-- ./Board -->
 	
-	<div id="J_pagefeed" data-role="page">
+	<div id="J_pagefeed" data-role="page" data-theme="b">
 		<div data-role="header" data-position="fixed" data-tap-toggle="false">
 			<h1>写下您的留言</h1>
-			<a data-rel="back" data-icon="carat-l" data-iconpos="notext"  class="ui-nodisc-icon"></a>
+			<a data-rel="back" class="ui-btn ui-nodisc-icon ui-icon-carat-l ui-btn-icon-notext"></a>
 		</div>
 		<div id="J_feedForm" class="ui-content">
 			<input type="text" placeholder="您的称呼" name="user" data-clear-btn="true" data-validate="username" value="张">
@@ -294,10 +294,10 @@
 		</div>
 	</div><!-- ./Feed -->
 
-	<div id="J_pagecontact" data-role="page">
+	<div id="J_pagecontact" data-role="page" data-theme="b">
 		<div data-role="header" data-position="fixed" data-tap-toggle="false">
 			<h1>联系我们</h1>
-			<a data-rel="back" data-icon="carat-l" data-iconpos="notext"  class="ui-nodisc-icon"></a>
+			<a data-rel="back" class="ui-btn ui-nodisc-icon ui-icon-carat-l ui-btn-icon-notext"></a>
 		</div>
 		<div role="main" class="ui-content ms-article">
 			<h3>我们的位置</h3>
@@ -314,20 +314,20 @@
 		</div>
 	</div><!-- ./Contact -->
 	
-	<div id="J_pagearticle" data-role="page">
+	<div id="J_pagearticle" data-role="page" data-theme="b">
 		<div data-role="header" data-position="fixed" data-tap-toggle="false">
 			<h1 id="J_articlePageTitle"></h1>
-			<a data-rel="back" data-icon="carat-l" data-iconpos="notext"  class="ui-nodisc-icon"></a>
+			<a data-rel="back" class="ui-btn ui-nodisc-icon ui-icon-carat-l ui-btn-icon-notext"></a>
 		</div>
 		<div id="J_article" class="ui-content ms-article">
 			
 		</div><!-- ./main -->
 	</div><!-- ./Article -->
 
-	<div id="J_pageProductDetail" data-role="page">
+	<div id="J_pageProductDetail" data-role="page" data-theme="b">
 		<div data-role="header" data-position="fixed" data-tap-toggle="false">
 			<h1>产品介绍</h1>
-			<a data-rel="back" data-icon="carat-l" data-iconpos="notext"  class="ui-nodisc-icon"></a>
+			<a data-rel="back" class="ui-btn ui-nodisc-icon ui-icon-carat-l ui-btn-icon-notext"></a>
 		</div>
 		<div role="main" class="ui-content ms-article">
 			<h2 id="J_productDetailTitle" class="tc ms-theme-title"></h2>
