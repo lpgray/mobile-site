@@ -1,0 +1,16 @@
+{
+	"r" : 1,
+	"b" : {
+		"id" : 3,
+		"imgs" : [
+			{"id" : 1, "src" : "assets/imgs/logo1.jpg", "alias" : 1},
+			{"id" : 2, "src" : "assets/imgs/logo2.png", "alias" : 1},
+			{"id" : 3, "src" : "assets/imgs/logo3.jpg", "alias" : 1},
+			{"id" : 4, "src" : "assets/imgs/logo4.png", "alias" : 1}
+		],
+		"title" : "新浪微博客户端",
+		"timestamp" : "2014-05-02 09:57",
+		"author" : "官方发布",
+		"content" : "<h3>案例介绍</h3><p>美家家商城隶属于佛山市木美居家具销售有限公司，是中国专业的家具网购商城。</p><h3>功能介绍</h3><p>美家家商城隶属于佛山市木美居家具销售有限公司，是中国专业的家具网购商城。</p>"
+	}
+}

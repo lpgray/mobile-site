@@ -1,5 +1,6 @@
 (function(global){
 	var URL_PREFIX = 'assets/moke/';
+	var PARAMS_HISTORY_LOCALSTORAGE = 'param_history';
 
 	function errorHandler(data){
 		$.mobile.loading('hide');
@@ -7,13 +8,12 @@
 
 	function query(url, callback, params){
 		$.mobile.loading('show', {
-			text: '正在努力加载...',
+			text: '',
 			textVisible: true,
 	        theme: 'a',
-	        textonly: false,
+	        textonly: true,
+	        html : '<div class="ms-loading"></div>加载中...'
 		});
-
-		params && (params['_reqTime'] = new Date)
 
 		$.get(URL_PREFIX + url + '?d=' + new Date, params, function(data){
 			if(!data.r){
@@ -28,10 +28,11 @@
 
 	function insert(url, callback, params){
 		$.mobile.loading('show', {
-			text: '正在提交...',
+			text: '',
 			textVisible: true,
 	        theme: 'a',
-	        textonly: false,
+	        textonly: true,
+	        html : '<div class="ms-loading"></div>正在提交...'
 		});
 
 		$.post(URL_PREFIX + url, params, function(data){
@@ -45,12 +46,15 @@
 		}, 'json');
 	}
 
-	function getUrlParamMap(url){
+	function getUrlParams(url){
 		var target = url;
-		var back = {};
+		var back = null;
 		if (target.indexOf("?") > -1 && target.indexOf("=") > -1) {
 			var arrSource = unescape(target).substring(target.indexOf("?") + 1, target.length).split("&");
 			var i = 0;
+			if(arrSource.length){
+				back = {};
+			}
 			while (i < arrSource.length) {
 				if (arrSource[i].indexOf("=") > 0) {
 					var srcMap = arrSource[i].split('=');
@@ -108,24 +112,29 @@
 				$('#J_pageHomeTopnews').html($('#J_tmplTopNews').tmpl(data.b.topnews));
 				// refresh listview
 				$('#J_pageHomeTopnews').listview('refresh');
+				//baidu map init
+				if($('#J_mapctn').data('bmap-inited') == 1){
+					return;
+				}
+				$('#J_mapctn').data('bmap-inited', 1);
+				var map = new BMap.Map("J_mapctn");
+				map.centerAndZoom(new BMap.Point(116.404, 39.915), 14);
+				// bind telphone call
+				$('#J_linkCall').click(function(){
+					return confirm('现在转到播电话的界面吗？');
+				});
 			});
 		},
-		'J_pagecontact' : function(){
-			//baidu map init
-			if($('#J_mapctn').data('bmap-inited') == 1){
-				return;
-			}
-			$('#J_mapctn').data('bmap-inited', 1);
-			var map = new BMap.Map("J_mapctn");
-			map.centerAndZoom(new BMap.Point(116.404, 39.915), 14);
-		},
-		'J_pagearticle' : function(paramMap){
+		// 'J_pagecontact' : function(){
+			
+		// },
+		'J_pagearticle' : function(params){
 			query('article.json', function(data){
 				// fill page title
 				$('#J_articlePageTitle').html('阅读文章');
 				// fill article
 				$('#J_article').html($('#J_tmplArticle').tmpl(data.b));
-			}, paramMap);
+			}, params);
 		},
 		'J_pagenews' : function(){
 			// load enterprise news
@@ -152,10 +161,20 @@
 				}
 				$('#J_productList').html($('#J_tmplProductList').tmpl(data.b));
 			});
+			// clear the detail page
+			$('#J_pageProductDetail').find('.j_data_content').html('');
 		},
 		'J_pageProductDetail' : function(params){
-			query('product.json', function(data){
+			// query the product introduction
+			query('product'+params.id+'.json', function(data){
+				// article
+				$('#J_productDetailTitle').html(data.b.title);
+				$('#J_productDetailSummary').html('发布者:' + data.b.author + '  ' + '发布于:' + data.b.timestamp);
+				$('#J_productArticle').html(data.b.content);
+
+				// add index & sub to images
 				for(var i = 0, l = data.b.imgs.length; i < l ; i++){
+					data.b.imgs[i].index = i;
 					if((i + 1)%2 === 0){
 						data.b.imgs[i].sub = 'b';
 					}else if((i+1)%3 === 0){
@@ -164,14 +183,24 @@
 						data.b.imgs[i].sub = 'a';
 					}
 				}
-				// thumnails & popups
+				// thumnails
 				$('#J_productDetailList').html($('#J_tmplProductDetailList').tmpl(data.b));
-				$('#J_productPopupCtn').html($('#J_tmplProductPopupList').tmpl(data.b));
-				$('#J_productPopupCtn').children().popup();
-				// article
-				$('#J_productDetailTitle').html(data.b.title);
-				$('#J_productDetailSummary').html('发布者:' + data.b.author + '  ' + '发布于:' + data.b.timestamp);
-				$('#J_productArticle').html(data.b.content);
+				// image preview page render
+				var $imagePreviewOwl = $('#J_imagePreviewOwl');
+				if($imagePreviewOwl.data('owl-init') && $imagePreviewOwl.data('pid') == params.id){
+					$imagePreviewOwl.css('opacity','0');
+					return;
+				}
+				$imagePreviewOwl.data('owl-init', false);
+				$imagePreviewOwl.data('pid', params.id);
+				$imagePreviewOwl.html($('#J_tmplImageCarousel').tmpl(data.b.imgs));
+				$imagePreviewOwl.owlCarousel({
+					navigation : false,
+					singleItem : true,
+					lazyFollow : false
+				});
+
+				$imagePreviewOwl.css('opacity','0');
 			}, params);
 		},
 		'J_pageboard' : function(params){
@@ -288,18 +317,63 @@
 			query('enterprise-art.json', function(data){
 				$('#J_art').html(data.b.content);
 			}, {id : 'enterpriseart'});
+		},
+		'J_pageImagePreview' : function(params){
+			var $imagePreviewOwl = $('#J_imagePreviewOwl');
+			var owl = $imagePreviewOwl.data('owlCarousel');
+			owl.jumpTo(params.index);
+			var top = -parseInt($imagePreviewOwl.height()/2);
+			$imagePreviewOwl.css({'margin-top':top});
+			$imagePreviewOwl.css({'opacity':1});
 		}
+	}
+
+	function pageChange(pageId, params){
+		// if params is null
+		// then get the latest successful excuted params
+		// else save the params in the localStorage for next time
+		if(!params){
+			params = getParams(pageId);
+		}else{
+			saveParams(pageId, params);
+		}
+
+		PAGE_LOAD_CALLBACKS[pageId] && PAGE_LOAD_CALLBACKS[pageId].call(params, params);
 	}
 
 	var ctrl = {
 		init : function(){
 			$(window).on('pagechange', function(e, o){
-				// console.info(o);
-				var paramMap = getUrlParamMap(o.absUrl);
-				PAGE_LOAD_CALLBACKS[o.toPage[0].id] && PAGE_LOAD_CALLBACKS[o.toPage[0].id].call(o, paramMap);
+				var params = getUrlParams(o.absUrl);
+				var pageId = o.toPage[0].id;
+				pageChange(pageId, params);
 			});
+
+			// $('[data-swipe-left=history]').bind('swiperight', function(e){
+			// 	alert('swipe left');
+			// 	history.back();
+			// });
 		}
 	}
 
 	global.CTRL = ctrl;
+
+	/**
+	 * Page Change Parameters History in LocalStorage
+	 */
+	var paramsHistory = localStorage.getItem(PARAMS_HISTORY_LOCALSTORAGE);
+	if(!paramsHistory){
+		localStorage.setItem(PARAMS_HISTORY_LOCALSTORAGE, JSON.stringify({}));
+		paramsHistory = JSON.parse(localStorage.getItem(PARAMS_HISTORY_LOCALSTORAGE));
+	}else{
+		paramsHistory = JSON.parse(paramsHistory);
+	}
+	function saveParams(pageKey, params){
+		paramsHistory[pageKey] = params;
+		localStorage.setItem(PARAMS_HISTORY_LOCALSTORAGE, JSON.stringify(paramsHistory));
+	}
+	function getParams(pageKey){
+		return paramsHistory[pageKey];
+	}
+
 }(window));

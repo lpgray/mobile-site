@@ -1,11 +1,12 @@
 {
 	"r" : 1,
 	"b" : {
+		"id" : 1,
 		"imgs" : [
-			{"id" : 1, "src" : "assets/imgs/product.jpg"},
-			{"id" : 2, "src" : "assets/imgs/product1.jpg"},
-			{"id" : 3, "src" : "assets/imgs/product2.jpg"},
-			{"id" : 4, "src" : "assets/imgs/product3.jpg"}
+			{"id" : 1, "src" : "assets/imgs/product.jpg", "alias" : 1},
+			{"id" : 2, "src" : "assets/imgs/product1.jpg", "alias" : 1},
+			{"id" : 3, "src" : "assets/imgs/product2.jpg", "alias" : 1},
+			{"id" : 4, "src" : "assets/imgs/product3.jpg", "alias" : 1}
 		],
 		"title" : "苏宁易购客户端",
 		"timestamp" : "2014-05-02 09:57",
