@@ -115,7 +115,6 @@
 	ArticleList.prototype.listenEvent = function(){
 		var self = this;
 		if(self.handlerToken != 0 || !self.handlerToken){
-			console.info('订阅');
 			self.handlerToken = EVENT.subscribe('towindowbottom', function(){
 				if(self.fetching){
 					return;
@@ -218,6 +217,11 @@
 			}, params);
 		},
 		'J_pagenews' : function(params){
+			if(this.data('ms-binded')){
+				$.mobile.loading('hide');
+				return;
+			}
+			this.data('ms-binded', true);
 			new ArticleList('J_enterpriseNews', 'J_tmplArticleList', 'article-list-1.json', {type : 1, pn : 0});
 			new ArticleList('J_bizNews', 'J_tmplArticleList', 'article-list-2.json', {type : 2, pn : 0});
 		},
