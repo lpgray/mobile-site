@@ -1,4 +1,4 @@
-$.mobile.defaultPageTransition = 'slide';
+$.mobile.defaultPageTransition = 'none';
 
 $(document).ready(function(){
 
@@ -42,4 +42,8 @@ $(document).ready(function(){
 
 	// Init Page Controller
 	CTRL.init();
+
+	// Init Event Center
+	EVENT.init();
+
 });

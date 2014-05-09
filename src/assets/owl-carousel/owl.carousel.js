@@ -342,6 +342,7 @@ if (typeof Object.create !== "function") {
 
         calculateWidth : function () {
             var base = this;
+            window.owl = base;
             base.itemWidth = Math.round(base.$elem.width() / base.options.items);
         },
 

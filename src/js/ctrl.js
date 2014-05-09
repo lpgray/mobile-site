@@ -7,14 +7,7 @@
 	}
 
 	function query(url, callback, params){
-		$.mobile.loading('show', {
-			text: '',
-			textVisible: true,
-	        theme: 'a',
-	        textonly: true,
-	        html : '<div class="ms-loading"></div>加载中...'
-		});
-
+		
 		$.get(URL_PREFIX + url + '?d=' + new Date, params, function(data){
 			if(!data.r){
 				errorHandler(data);
@@ -66,6 +59,82 @@
 		return back;
 	}
 
+	/**
+	 * 渲染文章列表视图
+	 */
+	function loadArticleList(articleListId, tmplId, reqUrl, params){
+		var $list = $('#' + articleListId);
+		var $btnLoadMore = $list.next('.ms-btn-load-more');
+
+		query(reqUrl, function(data){
+			$list.append($('#'+tmplId).tmpl(data.b.list));
+			$list.listview('refresh');
+
+			if(data.b.hasMore){
+				$btnLoadMore.css('display', 'block');
+			}else{
+				$btnLoadMore.css('display', 'none');
+			}
+		}, params);
+	}
+
+	/**
+	 * 支持loadmore的文章列表
+	 */
+	var ArticleList = function(articleListId, tmplId, reqUrl, params){
+		var self = this;
+		this.$list = $('#' + articleListId);
+		this.$btnLoadMore = this.$list.next('.ms-btn-load-more');
+		this.reqUrl = reqUrl;
+		this.params = params;
+		this.tmplId = tmplId;
+
+		this.params.pn = 0; // fetch the first page.
+
+		this.fetch(); // do fetch
+	}
+	ArticleList.prototype.fetch = function(){
+		var self = this;
+		this.params.pn++;
+
+		query(this.reqUrl, function(data){
+			self.$list.append($('#'+self.tmplId).tmpl(data.b.list));
+			self.$list.listview('refresh');
+
+			if(data.b.hasMore){
+				self.$btnLoadMore.css('display', 'block');
+				self.listenEvent();
+			}else{
+				self.$btnLoadMore.css('display', 'none');
+				self.quit();
+			}
+
+			self.fetching = false;
+		}, this.params);
+	}
+	ArticleList.prototype.listenEvent = function(){
+		var self = this;
+		if(self.handlerToken != 0 || !self.handlerToken){
+			console.info('订阅');
+			self.handlerToken = EVENT.subscribe('towindowbottom', function(){
+				if(self.fetching){
+					return;
+				}
+
+				self.fetching = true;
+				setTimeout(function(){
+					self.fetch();
+				}, 2000);
+			});
+		}
+	}
+	ArticleList.prototype.quit = function(){
+		var self = this;
+		if(self.handlerToken >=0){
+			EVENT.unsubscribe(self.handlerToken);
+		}
+	}
+
 	var validation = {
 		username : function(val){
 			if($.trim(val)){
@@ -92,7 +161,10 @@
 	}
 
 	var PAGE_LOAD_CALLBACKS = {
-		'J_pagehome' : function(){
+		'J_pagewelcome' : function(){
+			$.mobile.loading('hide');
+		},
+ 		'J_pagehome' : function(){
 			query('home.json', function(data){
 				// if owl has inited then return.
 				if($('#J_owl').data('owl-init') === true){
@@ -110,8 +182,20 @@
 				});
 				// fill topnews
 				$('#J_pageHomeTopnews').html($('#J_tmplTopNews').tmpl(data.b.topnews));
+				$('#J_pageHomeTopnews').find('img').each(function(){
+					var $self = $(this);
+					$self[0].onload = function(){
+						if($self.width() > $self.height()){
+							$self.css({'height':'100%'});
+						}else{
+							$self.css({'width':'100%'});
+						}
+					}
+					$self[0].src = $self.data('src');
+				});
 				// refresh listview
 				$('#J_pageHomeTopnews').listview('refresh');
+
 				//baidu map init
 				if($('#J_mapctn').data('bmap-inited') == 1){
 					return;
@@ -125,9 +209,6 @@
 				});
 			});
 		},
-		// 'J_pagecontact' : function(){
-			
-		// },
 		'J_pagearticle' : function(params){
 			query('article.json', function(data){
 				// fill page title
@@ -136,18 +217,9 @@
 				$('#J_article').html($('#J_tmplArticle').tmpl(data.b));
 			}, params);
 		},
-		'J_pagenews' : function(){
-			// load enterprise news
-			query('article-list-1.json', function(data){
-				$('#J_enterpriseNews').html($('#J_tmplArticleList').tmpl(data.b.list));
-				$('#J_enterpriseNews').listview('refresh');
-			}, {type : 1});
-
-			// load biz news
-			query('article-list-2.json', function(data){
-				$('#J_bizNews').html($('#J_tmplArticleList').tmpl(data.b.list));
-				$('#J_bizNews').listview('refresh');
-			}, {type : 2});
+		'J_pagenews' : function(params){
+			new ArticleList('J_enterpriseNews', 'J_tmplArticleList', 'article-list-1.json', {type : 1, pn : 0});
+			new ArticleList('J_bizNews', 'J_tmplArticleList', 'article-list-2.json', {type : 2, pn : 0});
 		},
 		'J_pageproduct' : function(){
 			// product list
@@ -185,21 +257,32 @@
 				}
 				// thumnails
 				$('#J_productDetailList').html($('#J_tmplProductDetailList').tmpl(data.b));
+				
 				// image preview page render
 				var $imagePreviewOwl = $('#J_imagePreviewOwl');
-				if($imagePreviewOwl.data('owl-init') && $imagePreviewOwl.data('pid') == params.id){
+				
+				// force the owl carousel wrapper's width equals page width
+				$imagePreviewOwl.width($('#J_pageImagePreview').width());
+				
+				if($imagePreviewOwl.data('pid') == params.id){
 					$imagePreviewOwl.css('opacity','0');
 					return;
 				}
-				$imagePreviewOwl.data('owl-init', false);
+
 				$imagePreviewOwl.data('pid', params.id);
 				$imagePreviewOwl.html($('#J_tmplImageCarousel').tmpl(data.b.imgs));
-				$imagePreviewOwl.owlCarousel({
-					navigation : false,
-					singleItem : true,
-					lazyFollow : false
-				});
-
+				if($imagePreviewOwl.data('owl-init')){
+					$imagePreviewOwl.data('owlCarousel').reinit({
+						navigation : false,
+						singleItem : true
+					});
+				}else{
+					$imagePreviewOwl.owlCarousel({
+						navigation : false,
+						singleItem : true
+					});
+				}
+	
 				$imagePreviewOwl.css('opacity','0');
 			}, params);
 		},
@@ -210,6 +293,7 @@
 			}, params);
 		},
 		'J_pagefeed' : function(){
+			$.mobile.loading('hide');
 			// clear form
 			var $form = $('#J_feedForm');
 			$form.find('textarea').val('');
@@ -319,6 +403,8 @@
 			}, {id : 'enterpriseart'});
 		},
 		'J_pageImagePreview' : function(params){
+			$.mobile.loading('hide');
+
 			var $imagePreviewOwl = $('#J_imagePreviewOwl');
 			var owl = $imagePreviewOwl.data('owlCarousel');
 			owl.jumpTo(params.index);
@@ -338,7 +424,15 @@
 			saveParams(pageId, params);
 		}
 
-		PAGE_LOAD_CALLBACKS[pageId] && PAGE_LOAD_CALLBACKS[pageId].call(params, params);
+		$.mobile.loading('show', {
+			text: '',
+			textVisible: true,
+	        theme: 'a',
+	        textonly: true,
+	        html : '<div class="ms-loading"></div>加载中...'
+		});
+		
+		PAGE_LOAD_CALLBACKS[pageId] && PAGE_LOAD_CALLBACKS[pageId].call($('#' + pageId), params);
 	}
 
 	var ctrl = {
@@ -348,11 +442,6 @@
 				var pageId = o.toPage[0].id;
 				pageChange(pageId, params);
 			});
-
-			// $('[data-swipe-left=history]').bind('swiperight', function(e){
-			// 	alert('swipe left');
-			// 	history.back();
-			// });
 		}
 	}
 

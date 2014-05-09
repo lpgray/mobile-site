@@ -28,7 +28,7 @@
 				<h1>专注</h1>
 				<p>专注移动互联网产品研发</p>
 				<br><br>
-				<a href="#J_pagehome" class="ui-btn ui-shadow ui-corner-all">访问网站</a>
+				<a href="#J_pagehome" class="ui-btn ui-shadow ui-corner-all">立即访问</a>
 			</div>
 		</div>
 	</div> <!--./welcome page -->
@@ -36,7 +36,7 @@
 	<div id="J_pagehome" data-role="page" data-theme="a" data-position="fixed">
 		<div data-role="tabs">
 			<div data-role="header" data-tap-toggle="false">
-				<h1 id="J_pageHomeTitle"><i>RayDesign</i></h1>
+				<h1 id="J_pageHomeTitle">标准企业客户端</h1>
 			</div>
 			<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-corners="false">
 				<div data-role="navbar">
@@ -98,7 +98,7 @@
 					</div>
 					<h3>联系方式</h3>
 					<p class="ms-theme-article">
-						<span class="ms-theme-color-red">联系电话:</span><a href="tel:18260008278">18260008278</a>
+						<span class="ms-theme-color-red">联系电话:</span><a href="tel:400800800">400-800-800</a>
 					</p>
 					<p class="ms-theme-article">
 						<span class="ms-theme-color-red">通讯地址:</span>南京市玄武区长江后街6号东大科技园6号楼
@@ -124,11 +124,17 @@
 				<ul id="J_enterpriseNews" data-role="listview" class="ui-nodisc-icon ui-alt-icon">
 					
 				</ul>
+				<a href="#" class="ms-btn-load-more">
+					正在加载...
+				</a>
 			</div>
 			<div id="J_tabindustry">
 				<ul id="J_bizNews" data-role="listview" class="ui-nodisc-icon ui-alt-icon">
 					
 				</ul>
+				<!-- <a href="#" class="ms-btn-load-more">
+					正在加载...
+				</a> -->
 			</div>
 		</div><!-- ./Tab Page -->
 	</div><!-- ./News Center -->
@@ -223,26 +229,6 @@
 			</div>
 		</div>
 	</div><!-- ./Feed -->
-
-	<!-- <div id="J_pagecontact" data-role="page" data-theme="a">
-		<div data-role="header" data-position="fixed" data-tap-toggle="false">
-			<h1>联系我们</h1>
-			<a data-rel="back" class="ui-btn ui-nodisc-icon ui-icon-carat-l ui-btn-icon-notext"></a>
-		</div>
-		<div role="main" class="ui-content ms-article">
-			<h3>我们的位置</h3>
-			<div id="J_mapctn" style="height: 15em; background-color: #ccc">
-				
-			</div>
-			<h3>联系方式</h3>
-			<p class="ms-theme-article">
-				<span class="ms-theme-color-red">联系电话:</span><a href="tel:18260008278">18260008278</a>
-			</p>
-			<p class="ms-theme-article">
-				<span class="ms-theme-color-red">通讯地址:</span>南京市玄武区长江后街6号东大科技园6号楼
-			</p>
-		</div>
-	</div> ./Contact -->
 	
 	<div id="J_pagearticle" data-role="page" data-theme="a" data-swipe-left="history">
 		<div data-role="header" data-position="fixed" data-tap-toggle="false">
@@ -277,12 +263,13 @@
 	</div><!-- ./Image Gallery -->
 
 	<div id="J_pageImagePreview" data-role="page" class="ms-image-preview-page">
-		<div id="J_imagePreviewOwl" style="position: fixed; top: 50%; transition: opacity .3s; -webkit-transition: opacity .3s; -moz-transition: opacity .3s;">
-			
+		<div id="J_imagePreviewOwl" style="position: fixed; top: 50%; transition: opacity .3s; -webkit-transition: opacity .3s; -moz-transition: opacity .3s; width: 100%;">
+			&nbsp;
 		</div>
 		<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-corners="false">
 			<h1>&nbsp;</h1>
 			<a data-rel="back" class="ui-btn ui-nodisc-icon ui-icon-carat-l ui-btn-left ui-nodisc-icon ui-btn-icon-left ui-corner-all">返回</a>
+			<!-- <a href="#" class="ui-btn ui-nodisc-icon ui-icon-arrow-d ui-btn-right ui-nodisc-icon ui-btn-icon-left ui-corner-all">保存</a> -->
 		</div>
 	</div><!--./Image Preview Page-->
 	
@@ -294,7 +281,7 @@
 		<li>
 			<a href="#J_pagearticle?id=${id}">
 				<div class="img-wrap">
-					<img src="${img}" alt="${title}">
+					<img data-src="${img}" alt="${title}">
 				</div>
 				<h2 class="ms-theme-title">${title}</h2>
 				<p class="ms-theme-article">${summary}</p>
@@ -374,6 +361,7 @@
 	<script src="assets/jquery.tmpl.min.js"></script>
 	<script type="text/javascript" src="http://api.map.baidu.com/api?type=quick&ak=0RoPs2PERfeEIR4pS0zKbRo4&v=1.0"></script>
 	<script src="js/ctrl.js"></script>
+	<script src="js/event.js"></script>
 	<script src="js/app.js"></script>
 </body>
 </html>
