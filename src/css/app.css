@@ -188,3 +188,8 @@
 
 /* ms-btn-load-more */
 .ms-btn-load-more, a.ms-btn-load-more{text-align: center; color: #AAA; display: block; text-decoration: none; padding: 1em}
+
+/* ms-touch-nav */
+.ms-touch-nav{background-color: #000;}
+.ms-touch-nav .item h2{color: #fff; padding: .5em; background: #ccc; margin: 0; font-size: .9em; text-align: center; font-weight: normal;}
+.ms-touch-nav .owl-controls{display: none;}

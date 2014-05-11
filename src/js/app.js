@@ -40,6 +40,24 @@ $(document).ready(function(){
 	    });
 	});
 
+	// Init ms-touch-nav
+	$('.ms-touch-nav').each(function() {
+		var $self = $(this);
+		var number = $self.data('items-number') || 5;
+		$self.owlCarousel({
+			items: number,
+			itemsTablet: [600, number],
+			itemsMobile: false,
+			pagination: false
+		});
+		$self.find('.item').bind('click tap', function(){
+			var $this = $(this);
+			$self.find('.item').removeClass('active');
+			$this.addClass('active');
+			$self.trigger('ms-nav-selected', [$this.data('rel')]);
+		});
+	});
+
 	// Init Page Controller
 	CTRL.init();
 

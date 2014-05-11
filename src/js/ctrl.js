@@ -226,6 +226,17 @@
 			new ArticleList('J_bizNews', 'J_tmplArticleList', 'article-list-2.json', {type : 2, pn : 0});
 		},
 		'J_pageproduct' : function(){
+			var $mtn = this.find('.ms-touch-nav');
+			if(!$mtn.data('eventBinded')){
+				$mtn.data('eventBinded', true);
+				this.css('padding-top', '75px'); // force 75px height
+				$mtn.on('ms-nav-selected', function(e, rel){
+					var $rel = $(rel);
+					$rel.siblings().css('display', 'none');
+					$rel.css('display', 'block');
+				});
+			}
+
 			// product list
 			query('product-list.json', function(data){
 				for(var i = 0, l = data.b.length; i < l ; i++){

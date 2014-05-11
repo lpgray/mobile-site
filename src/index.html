@@ -2,13 +2,18 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>企业标准化APP</title>
+	<title>企业标准APP</title>
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
 	<link rel="stylesheet" href="assets/jquery.mobile-1.4.2/jquery.mobile-1.4.2.min.css">
 	<link rel="stylesheet" href="assets/owl-carousel/owl.carousel.css">
 	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/app.css">
 	<link rel="stylesheet" href="css/theme.css">
+
+	<script src="assets/jquery-1.11.0.min.js"></script>
+	<script src="assets/jquery.mobile-1.4.2/jquery.mobile-1.4.2.min.js"></script>
+	<script src="assets/owl-carousel/owl.carousel.js"></script>
+	<script src="assets/jquery.tmpl.min.js"></script>
 </head>
 <body>
 	<div id="J_pagewelcome" data-role="page">
@@ -171,10 +176,43 @@
 		<div data-role="header" data-position="fixed" data-tap-toggle="false">
 			<h1>产品天地</h1>
 			<a data-rel="back" class="ui-btn ui-nodisc-icon ui-icon-carat-l ui-btn-icon-notext"></a>
+			<div id="J_productTypeCarousel" data-items-number="4" class="ms-touch-nav">
+				<div data-rel="#J_productList" class="item active"><h2>互联网</h2></div>
+				<div data-rel="#J_proTab2" class="item"><h2>汽车</h2></div>
+				<div data-rel="#J_proTab3" class="item"><h2>酒店</h2></div>
+				<div data-rel="#J_proTab4" class="item"><h2>房地产</h2></div>
+				<div data-rel="#J_proTab5" class="item"><h2>医疗</h2></div>
+				<div data-rel="#J_proTab6" class="item"><h2>军工</h2></div>
+				<div data-rel="#J_proTab7" class="item"><h2>自动化</h2></div>
+			</div>
 		</div>
 		<div data-role="main">
 			<div id="J_productList" class="ui-grid-a ms-gallery">
 				
+			</div>
+			<div id="J_proTab2" class="ui-grid-a ms-gallery">
+				<h1>汽车</h1>
+				<p></p>
+			</div>
+			<div id="J_proTab3" class="ui-grid-a ms-gallery">
+				<h1>酒店</h1>
+				<p></p>
+			</div>
+			<div id="J_proTab4" class="ui-grid-a ms-gallery">
+				<h1>房地产</h1>
+				<p></p>
+			</div>
+			<div id="J_proTab5" class="ui-grid-a ms-gallery">
+				<h1>医疗</h1>
+				<p></p>
+			</div>
+			<div id="J_proTab6" class="ui-grid-a ms-gallery">
+				<h1>军工</h1>
+				<p></p>
+			</div>
+			<div id="J_proTab7" class="ui-grid-a ms-gallery">
+				<h1>自动化</h1>
+				<p></p>
 			</div>
 		</div>
 	</div><!-- ./Product Center -->
@@ -355,10 +393,7 @@
 		<div class="item"><img src="${src}" alt="${alias}"></div>
 	</script>
 
-	<script src="assets/jquery-1.11.0.min.js"></script>
-	<script src="assets/jquery.mobile-1.4.2/jquery.mobile-1.4.2.min.js"></script>
-	<script src="assets/owl-carousel/owl.carousel.js"></script>
-	<script src="assets/jquery.tmpl.min.js"></script>
+	
 	<script type="text/javascript" src="http://api.map.baidu.com/api?type=quick&ak=0RoPs2PERfeEIR4pS0zKbRo4&v=1.0"></script>
 	
 
