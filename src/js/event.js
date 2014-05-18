@@ -17,7 +17,6 @@ var EVENT = (function() {
 
 				if (wH + wScroll >= outerHeight) {
 					EVENT.publish('towindowbottom');
-					console.info('towindowbottom!!!');
 				}
 			}
 		},

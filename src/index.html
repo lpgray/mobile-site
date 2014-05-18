@@ -6,7 +6,7 @@
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
 	<link rel="stylesheet" href="assets/jquery.mobile-1.4.2/jquery.mobile-1.4.2.min.css">
 	<link rel="stylesheet" href="assets/owl-carousel/owl.carousel.css">
-	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/app.css">
 	<link rel="stylesheet" href="css/theme.css">
 
@@ -42,6 +42,7 @@
 		<div data-role="tabs">
 			<div data-role="header" data-tap-toggle="false">
 				<h1 id="J_pageHomeTitle">标准企业客户端</h1>
+				<a id="J_btnShare" class="ui-btn ui-nodisc-icon ui-btn-right"><i class="fa fa-share-alt"></i></a>
 			</div>
 			<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-corners="false">
 				<div data-role="navbar">
@@ -395,7 +396,20 @@
 
 	
 	<script type="text/javascript" src="http://api.map.baidu.com/api?type=quick&ak=0RoPs2PERfeEIR4pS0zKbRo4&v=1.0"></script>
-	
+	<script type="text/javascript" src="http://openapi.baidu.com/widget/social/1.0/share.js"></script>
+	<script>
+	var BAIDU_SHARE_CONFIG = {
+		client_id: '0RoPs2PERfeEIR4pS0zKbRo4',
+		"order": ["sinaweibo", "renren", "qqweibo", "qqdenglu"],
+		"content": "标准企业APP，企业微信官网，企业官方介绍APP",
+		"theme": "native",
+		"dom_id": "J_btnShare",
+		"animate": true,
+		"pic_url": "",
+		"url": encodeURIComponent(location.href)
+	}
+	baidu.socShare.init(BAIDU_SHARE_CONFIG);
+	</script>
 
 	<script src="js/ctrl.js"></script>
 	<script src="js/event.js"></script>
